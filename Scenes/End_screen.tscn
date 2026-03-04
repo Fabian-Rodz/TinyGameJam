@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://vcc8o5wt85gg"]
+
+[ext_resource type="Script" uid="uid://d0n3ngwahoel3" path="res://Scenes/end_screen.gd" id="1_0qed1"]
+[ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="1_f32uf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i826k"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6ytee"]
+
+[node name="EndScreen" type="Node" unique_id=1721339883]
+script = ExtResource("1_0qed1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1011083850]
+offset_right = 1162.0
+offset_bottom = 658.0
+texture = SubResource("CanvasTexture_i826k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=555961535]
+offset_right = 722.0
+offset_bottom = 424.0
+
+[node name="replay" type="TextureButton" parent="HBoxContainer" unique_id=1031471490]
+material = SubResource("CanvasItemMaterial_6ytee")
+layout_mode = 2
+texture_normal = ExtResource("1_f32uf")
+texture_pressed = ExtResource("1_f32uf")
+texture_hover = ExtResource("1_f32uf")
+
+[node name="start screen" type="TextureButton" parent="HBoxContainer" unique_id=410355048]
+material = SubResource("CanvasItemMaterial_6ytee")
+layout_mode = 2
+texture_normal = ExtResource("1_f32uf")
+texture_pressed = ExtResource("1_f32uf")
+texture_hover = ExtResource("1_f32uf")
+
+[node name="exit" type="TextureButton" parent="HBoxContainer" unique_id=330109718]
+material = SubResource("CanvasItemMaterial_6ytee")
+layout_mode = 2
+texture_normal = ExtResource("1_f32uf")
+texture_pressed = ExtResource("1_f32uf")
+texture_hover = ExtResource("1_f32uf")
+
+[node name="Label" type="Label" parent="." unique_id=1765143045]
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 403.0
+offset_top = 184.0
+offset_right = 756.61597
+offset_bottom = 332.792
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "END
+"
+
+[connection signal="pressed" from="HBoxContainer/replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="HBoxContainer/start screen" to="." method="_on_start_screen_pressed"]
+[connection signal="pressed" from="HBoxContainer/exit" to="." method="_on_exit_pressed"]

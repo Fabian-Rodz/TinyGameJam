@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://be1bpxab0rped"]
+
+[ext_resource type="Script" uid="uid://byeqrrtnjw1mn" path="res://choose_a_car.gd" id="1_ts6mr"]
+[ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="2_peqyw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_17iao"]
+
+[node name="choose_a_car" type="Node" unique_id=2055831611]
+script = ExtResource("1_ts6mr")
+
+[node name="Control" type="Control" parent="." unique_id=1772465675]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1171145259]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 658.0
+texture = SubResource("CanvasTexture_17iao")
+
+[node name="back" type="TextureButton" parent="Control" unique_id=267920188]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_peqyw")
+texture_pressed = ExtResource("2_peqyw")
+texture_hover = ExtResource("2_peqyw")
+
+[node name="start_game" type="TextureButton" parent="Control" unique_id=357603923]
+layout_mode = 0
+offset_left = 150.0
+offset_top = -4.0
+offset_right = 278.0
+offset_bottom = 124.0
+texture_normal = ExtResource("2_peqyw")
+texture_pressed = ExtResource("2_peqyw")
+texture_hover = ExtResource("2_peqyw")
+
+[node name="Label" type="Label" parent="." unique_id=232370362]
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 209.0
+offset_top = 182.0
+offset_right = 973.61597
+offset_bottom = 330.792
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "choose a car"
+
+[connection signal="pressed" from="Control/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/start_game" to="." method="_on_start_game_pressed"]

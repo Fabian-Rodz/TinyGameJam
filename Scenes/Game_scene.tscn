@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://byvgwsd4o04tl"]
+
+[ext_resource type="Script" uid="uid://8c4hkfcykquo" path="res://Scenes/game_scene.gd" id="1_o3foj"]
+[ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="2_6jqai"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c6gxo"]
+
+[node name="Game" type="Node" unique_id=2034477828]
+script = ExtResource("1_o3foj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1029592912]
+offset_right = 1162.0
+offset_bottom = 658.0
+texture = SubResource("CanvasTexture_c6gxo")
+
+[node name="finish game" type="TextureButton" parent="." unique_id=661437409]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_6jqai")
+texture_pressed = ExtResource("2_6jqai")
+texture_hover = ExtResource("2_6jqai")
+
+[node name="Label" type="Label" parent="." unique_id=770370497]
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 403.0
+offset_top = 184.0
+offset_right = 756.61597
+offset_bottom = 332.792
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "Game"
+
+[connection signal="pressed" from="finish game" to="." method="_on_back_to_start_pressed"]

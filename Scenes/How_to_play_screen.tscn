@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cmm5a4j7y4cl0"]
+
+[ext_resource type="Script" uid="uid://bkldoano1pmb0" path="res://Scenes/how_to_play_screen.gd" id="1_17iao"]
+[ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="1_v70uw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_17iao"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgghr"]
+
+[node name="how to play" type="Node" unique_id=2055831611]
+script = ExtResource("1_17iao")
+
+[node name="Control" type="Control" parent="." unique_id=1772465675]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1171145259]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 658.0
+texture = SubResource("CanvasTexture_17iao")
+
+[node name="play" type="TextureButton" parent="Control" unique_id=2142163418]
+material = SubResource("CanvasItemMaterial_kgghr")
+layout_mode = 0
+offset_left = 14.0
+offset_top = 1.0
+offset_right = 142.0
+offset_bottom = 129.0
+texture_normal = ExtResource("1_v70uw")
+texture_pressed = ExtResource("1_v70uw")
+texture_hover = ExtResource("1_v70uw")
+
+[node name="Label" type="Label" parent="." unique_id=981306746]
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 139.0
+offset_top = 224.0
+offset_right = 846.61597
+offset_bottom = 372.792
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "how to play"
+
+[connection signal="pressed" from="Control/play" to="." method="_on_return_pressed"]

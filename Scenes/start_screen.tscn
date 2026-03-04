@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dwat0ir10oylb"]
+
+[ext_resource type="Script" uid="uid://m3vti5r3eh2h" path="res://Scenes/start_screen.gd" id="1_ainjc"]
+[ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="1_i8r30"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i826k"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ainjc"]
+
+[node name="StartScreen" type="Node" unique_id=1721339883]
+script = ExtResource("1_ainjc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1011083850]
+offset_right = 1162.0
+offset_bottom = 658.0
+texture = SubResource("CanvasTexture_i826k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=555961535]
+offset_right = 722.0
+offset_bottom = 424.0
+
+[node name="start" type="TextureButton" parent="HBoxContainer" unique_id=695852061]
+material = SubResource("CanvasItemMaterial_ainjc")
+layout_mode = 2
+texture_normal = ExtResource("1_i8r30")
+texture_pressed = ExtResource("1_i8r30")
+texture_hover = ExtResource("1_i8r30")
+
+[node name="how to play" type="TextureButton" parent="HBoxContainer" unique_id=412848971]
+material = SubResource("CanvasItemMaterial_ainjc")
+layout_mode = 2
+texture_normal = ExtResource("1_i8r30")
+texture_pressed = ExtResource("1_i8r30")
+texture_hover = ExtResource("1_i8r30")
+
+[node name="exit" type="TextureButton" parent="HBoxContainer" unique_id=939528538]
+material = SubResource("CanvasItemMaterial_ainjc")
+layout_mode = 2
+texture_normal = ExtResource("1_i8r30")
+texture_pressed = ExtResource("1_i8r30")
+texture_hover = ExtResource("1_i8r30")
+
+[node name="Label" type="Label" parent="." unique_id=48862383]
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 403.0
+offset_top = 184.0
+offset_right = 756.61597
+offset_bottom = 332.792
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "START"
+
+[node name="Label" type="Label" parent="Label" unique_id=1481099009]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 2.0
+offset_top = -150.0
+offset_right = 228.116
+offset_bottom = -98.830795
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "<--- exit button"
+
+[connection signal="pressed" from="HBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/how to play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/exit" to="." method="_on_exit_pressed"]
