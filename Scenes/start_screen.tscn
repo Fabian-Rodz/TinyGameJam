@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwat0ir10oylb"]
 
-[ext_resource type="Script" uid="uid://m3vti5r3eh2h" path="res://Scenes/start_screen.gd" id="1_ainjc"]
+[ext_resource type="Script" uid="uid://4uvb6756uxob" path="res://Scenes/start_screen.gd" id="1_ainjc"]
 [ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="1_i8r30"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_i826k"]
