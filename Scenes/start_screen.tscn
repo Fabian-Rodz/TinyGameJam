@@ -7,15 +7,63 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ainjc"]
 
-[node name="StartScreen" type="Node" unique_id=1721339883]
+[node name="StartScreen" type="Control" unique_id=128043142]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ainjc")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1011083850]
-offset_right = 1162.0
-offset_bottom = 658.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -0.5
+offset_right = 1155.0
+offset_bottom = 654.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("CanvasTexture_i826k")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=48862383]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -92.5
+offset_right = 201.0
+offset_bottom = 92.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "START"
+
+[node name="Label" type="Label" parent="Label" unique_id=1481099009]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = -0.827
+anchor_right = 0.2
+anchor_bottom = -0.827
+offset_left = -28.400002
+offset_top = -19.50499
+offset_right = 172.6
+offset_bottom = 19.49501
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "<--- exit button"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=555961535]
+layout_mode = 1
 offset_right = 722.0
 offset_bottom = 424.0
 
@@ -39,31 +87,6 @@ layout_mode = 2
 texture_normal = ExtResource("1_i8r30")
 texture_pressed = ExtResource("1_i8r30")
 texture_hover = ExtResource("1_i8r30")
-
-[node name="Label" type="Label" parent="." unique_id=48862383]
-anchors_preset = -1
-anchor_right = 0.042000003
-anchor_bottom = 0.071
-offset_left = 403.0
-offset_top = 184.0
-offset_right = 756.61597
-offset_bottom = 332.792
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 135
-text = "START"
-
-[node name="Label" type="Label" parent="Label" unique_id=1481099009]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.042000003
-anchor_bottom = 0.071
-offset_left = 2.0
-offset_top = -150.0
-offset_right = 228.116
-offset_bottom = -98.830795
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "<--- exit button"
 
 [connection signal="pressed" from="HBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/how to play" to="." method="_on_how_to_play_pressed"]
