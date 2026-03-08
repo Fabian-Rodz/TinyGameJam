@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://beurfqp075oxm"]
+
+[ext_resource type="Script" uid="uid://bykf7jcudlsh0" path="res://Scripts/main_game_test.gd" id="1_mshqt"]
+[ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="2_o4yed"]
+[ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="3_o4yed"]
+[ext_resource type="PackedScene" uid="uid://110m488ywy6w" path="res://Scenes/Sponsor.tscn" id="4_vibc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vibc5"]
+size = Vector2(1268.0889, 1211.7544)
+
+[node name="CarTest" type="Node2D" unique_id=891284403]
+script = ExtResource("1_mshqt")
+
+[node name="player1" parent="." unique_id=1980784767 instance=ExtResource("2_o4yed")]
+position = Vector2(607, 389)
+
+[node name="player2" parent="." unique_id=1363484307 instance=ExtResource("2_o4yed")]
+position = Vector2(1198, 398)
+
+[node name="Sponsor" parent="." unique_id=701603321 instance=ExtResource("4_vibc5")]
+position = Vector2(1568, 98)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=604607441]
+position = Vector2(900.75, 92.87492)
+scale = Vector2(1.6371094, 0.15019543)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=220435634]
+position = Vector2(0.15270996, 20.806702)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_vibc5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=231594852]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("3_o4yed")
