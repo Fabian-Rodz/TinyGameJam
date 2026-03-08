@@ -52,7 +52,6 @@ func _physics_process(delta: float) -> void:
 	# Movement
 	if direction != Vector2.ZERO:
 		velocity = velocity.move_toward(direction * SPEED, 100)
-		print("Yes")
 
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO,100)
@@ -66,4 +65,3 @@ func _on_car_area_area_entered(area: Area2D) -> void:
 	velocity = direction
 	global_position.x = move_toward(global_position.x,global_position.x + direction.x,10)
 	global_position.y = move_toward(global_position.y,global_position.y + direction.y,10)
-	print("hit car. OUCH!")
