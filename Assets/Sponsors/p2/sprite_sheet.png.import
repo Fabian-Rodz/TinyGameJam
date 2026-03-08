@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brgkpkt1x2sq5"
-path="res://.godot/imported/white_box.webp-8eda1deed26d9888bdaa0e8b2d10f7ff.ctex"
+uid="uid://6yp85e2tdc7i"
+path="res://.godot/imported/sprite_sheet.png-8ccbfa1bd6d2a215390fbe69bf3702d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/white_box.webp"
-dest_files=["res://.godot/imported/white_box.webp-8eda1deed26d9888bdaa0e8b2d10f7ff.ctex"]
+source_file="res://Assets/Sponsors/p2/sprite_sheet.png"
+dest_files=["res://.godot/imported/sprite_sheet.png-8ccbfa1bd6d2a215390fbe69bf3702d6.ctex"]
 
 [params]
 
