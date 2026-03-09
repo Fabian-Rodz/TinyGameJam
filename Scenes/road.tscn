@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dprkhikxq3b5i"]
 
 [ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="1_s5bdx"]
-[ext_resource type="Script" uid="uid://beee5utt6o3e1" path="res://Scenes/road.gd" id="1_w872l"]
+[ext_resource type="Script" uid="uid://b25o7tau046ak" path="res://Scenes/road.gd" id="1_w872l"]
 [ext_resource type="Script" uid="uid://dwyxsejm2mrdm" path="res://Scenes/obstacle_manager.gd" id="1_wtjdh"]
 [ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="2_80q1u"]
 [ext_resource type="PackedScene" uid="uid://c8uo7x0hmkmgx" path="res://Scenes/node_2d.tscn" id="3_w872l"]
 [ext_resource type="PackedScene" uid="uid://ino27gljdou8" path="res://Scenes/food.tscn" id="5_onwkh"]
 [ext_resource type="AudioStream" uid="uid://f0ikwducd4xj" path="res://Assets/road_related/viacheslavstarostin-action-drive-racing-music-429957.mp3" id="6_onwkh"]
-[ext_resource type="Script" uid="uid://bykf7jcudlsh0" path="res://Scripts/main_game_manager.gd" id="7_fycqo"]
+[ext_resource type="Script" uid="uid://c4nuk3wgqv164" path="res://Scripts/main_game_manager.gd" id="7_fycqo"]
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="8_fiiv4"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="8_isxhl"]
 [ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="9_isxhl"]
@@ -101,6 +101,19 @@ position = Vector2(232, 108)
 z_index = 2
 position = Vector2(2156, 108)
 
+[node name="finishtime" type="Node2D" parent="GameManager" unique_id=180304682]
+position = Vector2(1200, -98)
+
+[node name="finishTimeLabel" type="Label" parent="GameManager/finishtime" unique_id=431841375]
+offset_left = -1181.0
+offset_top = -131.0
+offset_right = -501.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(0.8978127, 0.8978127, 0.89781266, 1)
+theme_override_font_sizes/font_size = 50
+text = "Time Left: 
+"
+
 [node name="Countdown" type="Node2D" parent="GameManager" unique_id=1248610534]
 position = Vector2(1200, -49)
 
@@ -111,7 +124,8 @@ offset_right = 201.0
 offset_bottom = 92.5
 theme_override_colors/font_color = Color(0.8978127, 0.8978127, 0.89781266, 1)
 theme_override_font_sizes/font_size = 135
-text = "COUNTDOWN
+text = " 
+
 "
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
@@ -170,7 +184,14 @@ shape = SubResource("RectangleShape2D_isxhl")
 wait_time = 5.0
 one_shot = true
 
+[node name="finishTimer" type="Timer" parent="." unique_id=1955269461]
+wait_time = 65.0
+one_shot = true
+autostart = true
+ignore_time_scale = true
+
 [connection signal="timeout" from="ObstacleManager/Timer" to="ObstacleManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="ObstacleManager/Timer2" to="ObstacleManager" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="StartTimer" to="ObstacleManager" method="_on_start_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="GameManager" method="_on_start_timer_timeout"]
+[connection signal="timeout" from="finishTimer" to="." method="_on_finish_timer_timeout"]

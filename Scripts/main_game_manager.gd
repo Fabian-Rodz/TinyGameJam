@@ -8,6 +8,7 @@ extends Node2D
 @onready var p2_spawn: Node2D = $P2Spawn
 @onready var start_timer: Timer = $"../StartTimer"
 
+
 @onready var countdown: Label = $Countdown/CountdownLabel
 @onready var p1_points_label: Label = $P1Points/P1PointsLabel
 @onready var p2_points_label: Label = $P2Points/P2PointsLabel
@@ -56,7 +57,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	p1_points_label.text = str(player_1.points)
 	p2_points_label.text = str(player_2.points)
-	if start_timer.time_left > 4:
+
+
+	if start_timer.time_left >= 4:
 		countdown.text = ""
 	elif start_timer.time_left > 3:
 		countdown.text = "3"
@@ -70,6 +73,7 @@ func _process(delta: float) -> void:
 		p2_points_label.show()
 		countdown.text = "GO!"
 
+		
 	if not player_1.is_hit:
 		sponsor_1.change_sprite("1st")
 	if not player_2.is_hit:
