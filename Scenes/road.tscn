@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://cg22jfvx85wbe"]
+[gd_scene format=3 uid="uid://dprkhikxq3b5i"]
 
 [ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="1_s5bdx"]
-[ext_resource type="Script" uid="uid://ch6khanql84nr" path="res://Scenes/road.gd" id="1_w872l"]
-[ext_resource type="Script" uid="uid://dirbjenb5xf3" path="res://Scenes/obstacle_manager.gd" id="1_wtjdh"]
+[ext_resource type="Script" uid="uid://b25o7tau046ak" path="res://Scenes/road.gd" id="1_w872l"]
+[ext_resource type="Script" uid="uid://dwyxsejm2mrdm" path="res://Scenes/obstacle_manager.gd" id="1_wtjdh"]
 [ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="2_80q1u"]
-[ext_resource type="PackedScene" uid="uid://delia547kmgie" path="res://Scenes/node_2d.tscn" id="3_w872l"]
+[ext_resource type="PackedScene" path="res://Scenes/node_2d.tscn" id="3_w872l"]
+[ext_resource type="PackedScene" uid="uid://ino27gljdou8" path="res://Scenes/food.tscn" id="5_onwkh"]
 [ext_resource type="AudioStream" uid="uid://f0ikwducd4xj" path="res://Assets/road_related/viacheslavstarostin-action-drive-racing-music-429957.mp3" id="6_onwkh"]
 
 [node name="Road" type="Node2D" unique_id=171144305]
@@ -42,6 +43,7 @@ position = Vector2(1446, 497)
 
 [node name="ObstacleManager" type="Node2D" parent="." unique_id=1750987065]
 script = ExtResource("1_wtjdh")
+food_scene = ExtResource("5_onwkh")
 obstacle_scene = ExtResource("3_w872l")
 
 [node name="Timer" type="Timer" parent="ObstacleManager" unique_id=1548657478]
