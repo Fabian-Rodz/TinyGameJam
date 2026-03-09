@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pmqn0xecrfnr"
-path="res://.godot/imported/color_select.PNG-52b04676bdbe33125d2759ea755e43d5.ctex"
+uid="uid://de6kovwo0a37y"
+path="res://.godot/imported/yellowCS_sprites.PNG-7dc2d5c333db9b1873be6638d6460981.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sponsors/p2/color_select.PNG"
-dest_files=["res://.godot/imported/color_select.PNG-52b04676bdbe33125d2759ea755e43d5.ctex"]
+source_file="res://Assets/Sponsors/p2/yellowCS_sprites.PNG"
+dest_files=["res://.godot/imported/yellowCS_sprites.PNG-7dc2d5c333db9b1873be6638d6460981.ctex"]
 
 [params]
 
