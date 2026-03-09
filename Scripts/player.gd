@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
+const BASE_SPEED = 800.0
+const HIT_SPEED = 400
 var crash_speed = 1000
 
 
@@ -45,54 +46,31 @@ func change_state(newState):
 			sprite.play("jump")
 
 # Car Colors
-enum Car_Color{
-	Red,
-	Yellow,
-	Blue,
-	Green
-}
-var color: Car_Color = Car_Color.Red
-
-func change_color(newColor:Car_Color):
+var color
+var colors: Array[AnimatedSprite2D] = []
+func change_color(newColor:String):
 	color = newColor
-	match color:
-		Car_Color.Red:
-			red_animated_sprite_2d.show()
-			yellow_animated_sprite_2d.hide()
-			blue_animated_sprite_2d.hide()
-			green_animated_sprite_2d.hide()
-			sprite = red_animated_sprite_2d
-		Car_Color.Yellow:
-			red_animated_sprite_2d.hide()
-			yellow_animated_sprite_2d.show()
-			blue_animated_sprite_2d.hide()
-			green_animated_sprite_2d.hide()
-			sprite = yellow_animated_sprite_2d
-		Car_Color.Blue:
-			red_animated_sprite_2d.hide()
-			yellow_animated_sprite_2d.hide()
-			blue_animated_sprite_2d.show()
-			green_animated_sprite_2d.hide()
-			sprite = blue_animated_sprite_2d
-		Car_Color.Green:
-			red_animated_sprite_2d.hide()
-			yellow_animated_sprite_2d.hide()
-			blue_animated_sprite_2d.hide()
-			green_animated_sprite_2d.show()
-			sprite = green_animated_sprite_2d
+	if color == "red":
+		sprite = red_animated_sprite_2d
+	elif color == "yellow":
+		sprite = yellow_animated_sprite_2d
+	elif color == "blue":
+		sprite = blue_animated_sprite_2d
+	elif color == "green":
+		sprite = green_animated_sprite_2d
+	
+	for list_color in colors:
+		list_color.hide()
+	sprite.show()
 
 
 func _ready() -> void:
-	match color:
-		Car_Color.Red:
-			sprite = red_animated_sprite_2d
-		Car_Color.Yellow:
-			sprite = yellow_animated_sprite_2d
-		Car_Color.Blue:
-			sprite = blue_animated_sprite_2d
-		Car_Color.Green:
-			sprite = green_animated_sprite_2d
+	colors.append(red_animated_sprite_2d)
+	colors.append(yellow_animated_sprite_2d)
+	colors.append(blue_animated_sprite_2d)
+	colors.append(green_animated_sprite_2d)
 	
+	change_color("red")
 	change_state(Car_State.Startup)
 
 
@@ -117,13 +95,13 @@ func _physics_process(delta: float) -> void:
 
 		Car_State.Running:
 			#if direction != Vector2.ZERO:
-			velocity = velocity.move_toward(direction * SPEED, 100)
+			velocity = velocity.move_toward(direction * BASE_SPEED, 100)
 			#else:
 				#velocity = velocity.move_toward(Vector2.ZERO,100)
 
 		Car_State.Hit:
 			if hit_counter < 4:
-				velocity = velocity.move_toward(Vector2(-250,direction.y*SPEED*0.5),110)
+				velocity = velocity.move_toward(direction * HIT_SPEED,110)
 				if not sprite.is_playing():
 					sprite.play("hit")
 					hit_counter += 1

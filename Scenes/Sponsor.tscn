@@ -518,7 +518,6 @@ animations = [{
 script = ExtResource("1_6a80s")
 
 [node name="P1RedAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=211921784]
-visible = false
 sprite_frames = SubResource("SpriteFrames_17qn8")
 animation = &"winner"
 autoplay = "1st"

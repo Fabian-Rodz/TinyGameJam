@@ -7,6 +7,19 @@
 [ext_resource type="PackedScene" path="res://Scenes/node_2d.tscn" id="3_w872l"]
 [ext_resource type="PackedScene" uid="uid://ino27gljdou8" path="res://Scenes/food.tscn" id="5_onwkh"]
 [ext_resource type="AudioStream" uid="uid://f0ikwducd4xj" path="res://Assets/road_related/viacheslavstarostin-action-drive-racing-music-429957.mp3" id="6_onwkh"]
+[ext_resource type="Script" uid="uid://bykf7jcudlsh0" path="res://Scripts/main_game_manager.gd" id="7_fycqo"]
+[ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="8_fiiv4"]
+[ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="8_isxhl"]
+[ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="9_isxhl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fiiv4"]
+size = Vector2(98, 1279)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isxhl"]
+size = Vector2(2472, 219)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqtd0"]
+size = Vector2(276, 1359)
 
 [node name="Road" type="Node2D" unique_id=171144305]
 script = ExtResource("1_w872l")
@@ -16,6 +29,7 @@ position = Vector2(1185, 345)
 zoom = Vector2(0.8, 0.8)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=341305085]
+texture_filter = 1
 position = Vector2(1195.3501, 240)
 scale = Vector2(3.8838658, 3)
 texture = ExtResource("2_80q1u")
@@ -55,4 +69,104 @@ stream = ExtResource("6_onwkh")
 volume_db = -6.804
 autoplay = true
 
+[node name="GameManager" type="Node2D" parent="." unique_id=1985690405]
+script = ExtResource("7_fycqo")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager" unique_id=657250952]
+modulate = Color(0, 0, 0, 0.41960785)
+position = Vector2(926.5, -128.99997)
+scale = Vector2(2.4476562, 0.7984375)
+texture = ExtResource("8_isxhl")
+
+[node name="P1Spawn" type="Node2D" parent="GameManager" unique_id=1526426052]
+position = Vector2(90, 395)
+
+[node name="P2Spawn" type="Node2D" parent="GameManager" unique_id=765355238]
+position = Vector2(90, 685)
+
+[node name="player1" parent="GameManager" unique_id=1980784767 instance=ExtResource("8_fiiv4")]
+position = Vector2(-354, 376)
+
+[node name="player2" parent="GameManager" unique_id=1509053486 instance=ExtResource("8_fiiv4")]
+position = Vector2(-362, 691)
+
+[node name="sponsor1" parent="GameManager" unique_id=701603321 instance=ExtResource("9_isxhl")]
+z_index = 2
+position = Vector2(232, 108)
+
+[node name="sponsor2" parent="GameManager" unique_id=361757877 instance=ExtResource("9_isxhl")]
+z_index = 2
+position = Vector2(2156, 108)
+
+[node name="StartTimer" type="Timer" parent="GameManager" unique_id=1979710355]
+wait_time = 5.0
+one_shot = true
+
+[node name="Countdown" type="Node2D" parent="GameManager" unique_id=1248610534]
+position = Vector2(1200, -49)
+
+[node name="CountdownLabel" type="Label" parent="GameManager/Countdown" unique_id=940413326]
+offset_left = -201.0
+offset_top = -92.5
+offset_right = 201.0
+offset_bottom = 92.5
+theme_override_colors/font_color = Color(0.8978127, 0.8978127, 0.89781266, 1)
+theme_override_font_sizes/font_size = 135
+text = "COUNTDOWN
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="P1Points" type="Node2D" parent="GameManager" unique_id=1991192038]
+position = Vector2(452, 108)
+scale = Vector2(0.5, 0.5)
+
+[node name="P1PointsLabel" type="Label" parent="GameManager/P1Points" unique_id=681683700]
+offset_left = -201.0
+offset_top = -92.5
+offset_right = 201.0
+offset_bottom = 92.5
+theme_override_colors/font_color = Color(0.958888, 0.9588881, 0.958888, 1)
+theme_override_font_sizes/font_size = 135
+text = "P1 Points"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="P2Points" type="Node2D" parent="GameManager" unique_id=56276131]
+position = Vector2(1807, 108)
+scale = Vector2(0.5, 0.5)
+
+[node name="P2PointsLabel" type="Label" parent="GameManager/P2Points" unique_id=1031840405]
+offset_left = -201.0
+offset_top = -92.5
+offset_right = 201.0
+offset_bottom = 92.5
+theme_override_colors/font_color = Color(0.958888, 0.9588881, 0.958888, 1)
+theme_override_font_sizes/font_size = 135
+text = "P2 Points"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=47435769]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="Left" type="CollisionShape2D" parent="Boundaries" unique_id=1186220882]
+position = Vector2(-64, 360.5)
+shape = SubResource("RectangleShape2D_fiiv4")
+
+[node name="Bottom" type="CollisionShape2D" parent="Boundaries" unique_id=1844524532]
+position = Vector2(1213, 1002)
+shape = SubResource("RectangleShape2D_isxhl")
+
+[node name="Right" type="CollisionShape2D" parent="Boundaries" unique_id=974321320]
+position = Vector2(2523, 275.5)
+shape = SubResource("RectangleShape2D_kqtd0")
+
+[node name="Top" type="CollisionShape2D" parent="Boundaries" unique_id=730993478]
+position = Vector2(1207, 224)
+shape = SubResource("RectangleShape2D_isxhl")
+
 [connection signal="timeout" from="ObstacleManager/Timer" to="ObstacleManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="GameManager/StartTimer" to="GameManager" method="_on_start_timer_timeout"]
