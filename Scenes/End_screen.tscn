@@ -113,10 +113,40 @@ position = Vector2(105, 87.00002)
 scale = Vector2(1.0402768, 1.1555814)
 texture = SubResource("AtlasTexture_3xm45")
 
+[node name="Label" type="Label" parent="Sprite2D2" unique_id=2092046796]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -147.64822
+offset_top = -99.04107
+offset_right = -107.64822
+offset_bottom = -76.04108
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "score"
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=745112964]
-position = Vector2(1822, 95)
+position = Vector2(1809, 92)
 scale = Vector2(1.2668598, 1.2801892)
 texture = SubResource("AtlasTexture_in6lv")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=976626465]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.8658
+offset_top = -89.17322
+offset_right = -84.8658
+offset_bottom = -66.17322
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "score"
 
 [node name="Label2" type="Label" parent="." unique_id=754737095]
 anchors_preset = 8
