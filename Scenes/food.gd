@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	global_position += Vector2(-speed * delta, 0)
 
-	if global_position.x < -120:
+	if global_position.x < -110:
 		queue_free()
 		queue_free()
 	
