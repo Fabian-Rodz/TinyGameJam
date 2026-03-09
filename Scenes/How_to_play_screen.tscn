@@ -204,9 +204,9 @@ modulate = Color(0.5188342, 0.4113044, 0.5543902, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 50.0
+offset_left = 19.0
 offset_top = 380.0
-offset_right = -35.0
+offset_right = -24.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -214,14 +214,14 @@ texture = SubResource("CanvasTexture_smhfx")
 expand_mode = 1
 
 [node name="Label4" type="Label" parent="." unique_id=1117526918]
-offset_left = 76.0
-offset_top = 372.0
-offset_right = 1852.0
-offset_bottom = 862.0
+offset_left = 26.0
+offset_top = 374.0
+offset_right = 1892.0
+offset_bottom = 864.0
 theme_override_colors/font_color = Color(0.9999998, 0.93906605, 0.8203818, 1)
 theme_override_fonts/font = ExtResource("8_0gqym")
 theme_override_font_sizes/font_size = 40
-text = "Race against the competing company to deliver food
+text = "Race against the competing restaurant to deliver food
 
 
 Gather food items along the way to increase points
