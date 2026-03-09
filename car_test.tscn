@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://beurfqp075oxm"]
+[gd_scene format=3 uid="uid://bwi0spxsvs528"]
 
-[ext_resource type="Script" uid="uid://bykf7jcudlsh0" path="res://Scripts/main_game_manager.gd" id="1_mshqt"]
+[ext_resource type="Script" uid="uid://dyla8cxd0jv8s" path="res://Scripts/main_game_test.gd" id="1_mshqt"]
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="2_o4yed"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="3_o4yed"]
-[ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="4_vibc5"]
-[ext_resource type="PackedScene" uid="uid://cj4woq0r1d4an" path="res://Scenes/food.tscn" id="5_g8v5u"]
+[ext_resource type="PackedScene" path="res://Scenes/Sponsor.tscn" id="4_vibc5"]
+[ext_resource type="PackedScene" uid="uid://ino27gljdou8" path="res://Scenes/food.tscn" id="5_g8v5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xioud"]
 size = Vector2(86, 83)
