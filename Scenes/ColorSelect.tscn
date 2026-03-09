@@ -1,0 +1,313 @@
+[gd_scene format=3 uid="uid://td2adrfyri3i"]
+
+[ext_resource type="Script" uid="uid://c6o7txd5oh72u" path="res://Scripts/color_select.gd" id="1_ghltt"]
+[ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="3_g43r4"]
+[ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="4_y3ohj"]
+[ext_resource type="Texture2D" uid="uid://clxag1mbh8ltv" path="res://Assets/button.png" id="5_1qfm4"]
+[ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="5_ghltt"]
+[ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="6_1qfm4"]
+[ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="6_7b2w3"]
+[ext_resource type="Texture2D" uid="uid://yxa6omgh035y" path="res://Scenes/leisure-games-icon-pixel-arrow-joystick-controls-button-png.png" id="6_8lrcs"]
+[ext_resource type="Texture2D" uid="uid://jqvtbntdvq7" path="res://Assets/Sponsors/p1/blueCS_sprites.PNG" id="7_8lrcs"]
+[ext_resource type="Texture2D" uid="uid://s6t5qh767q3r" path="res://Assets/Sponsors/p1/greenCS_sprites.PNG" id="8_7b2w3"]
+[ext_resource type="Texture2D" uid="uid://dhsrqdunliyv7" path="res://Assets/Sponsors/p1/redCS_sprites.PNG" id="9_kch6y"]
+[ext_resource type="Texture2D" uid="uid://kn40878da15b" path="res://Assets/Sponsors/p1/yellowCS_sprites.PNG" id="10_bwdpu"]
+[ext_resource type="Texture2D" uid="uid://emqo4elirqv4" path="res://Assets/Sponsors/p2/blueCS_sprites.PNG" id="11_cx73g"]
+[ext_resource type="Texture2D" uid="uid://v2sjebibwqkd" path="res://Assets/Sponsors/p2/greenCS_sprites.PNG" id="12_l8r0y"]
+[ext_resource type="Texture2D" uid="uid://bn1kkjmuxcugr" path="res://Assets/Sponsors/p2/redCS_sprites.PNG" id="13_0irvm"]
+[ext_resource type="Texture2D" uid="uid://de6kovwo0a37y" path="res://Assets/Sponsors/p2/yellowCS_sprites.PNG" id="14_g84lg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_17iao"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guxs0"]
+atlas = ExtResource("7_8lrcs")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmoau"]
+atlas = ExtResource("8_7b2w3")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwdep"]
+atlas = ExtResource("9_kch6y")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8t63"]
+atlas = ExtResource("10_bwdpu")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vk8al"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guxs0")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmoau")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwdep")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8t63")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp0cb"]
+atlas = ExtResource("11_cx73g")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1p4e"]
+atlas = ExtResource("12_l8r0y")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm6qc"]
+atlas = ExtResource("13_0irvm")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_556bj"]
+atlas = ExtResource("14_g84lg")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpt62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp0cb")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1p4e")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm6qc")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_556bj")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[node name="ColorSelect" type="Node" unique_id=2055831611]
+script = ExtResource("1_ghltt")
+
+[node name="Label" type="Label" parent="." unique_id=232370362]
+visible = false
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 172.0
+offset_top = 92.0
+offset_right = 973.61597
+offset_bottom = 330.792
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "choose a car"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1506909397]
+position = Vector2(1185, 345)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1486720639]
+visible = false
+texture_filter = 1
+position = Vector2(1195.3501, 240)
+scale = Vector2(3.8838658, 3)
+texture = ExtResource("3_g43r4")
+
+[node name="Road1" type="Sprite2D" parent="." unique_id=1298991054]
+position = Vector2(1983, 629.5)
+scale = Vector2(12.171875, 1.4244791)
+texture = ExtResource("4_y3ohj")
+
+[node name="Road2" type="Sprite2D" parent="." unique_id=319330445]
+position = Vector2(4499.5, 630)
+scale = Vector2(13.4192705, 1.4322916)
+texture = ExtResource("4_y3ohj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1965317183]
+modulate = Color(0, 0, 0, 0.6901961)
+position = Vector2(1362, 323.99994)
+scale = Vector2(2.4476562, 1.071875)
+texture = ExtResource("5_ghltt")
+
+[node name="Control" type="Control" parent="." unique_id=1772465675]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1171145259]
+visible = false
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 658.0
+texture = SubResource("CanvasTexture_17iao")
+
+[node name="back" type="TextureButton" parent="Control" unique_id=267920188]
+layout_mode = 0
+offset_top = -159.0
+offset_right = 204.0
+offset_bottom = -107.0
+scale = Vector2(2.09, 2.09)
+texture_normal = ExtResource("5_1qfm4")
+texture_pressed = ExtResource("5_1qfm4")
+texture_hover = ExtResource("5_1qfm4")
+
+[node name="Label2" type="Label" parent="Control/back" unique_id=1583284118]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0287
+offset_top = -14.995213
+offset_right = 201.97128
+offset_bottom = 56.00479
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.53, 0.53)
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("6_7b2w3")
+theme_override_font_sizes/font_size = 70
+text = "Return"
+horizontal_alignment = 1
+
+[node name="start_game" type="TextureButton" parent="Control" unique_id=357603923]
+layout_mode = 0
+offset_left = 449.0
+offset_top = -159.0
+offset_right = 653.0
+offset_bottom = -31.0
+scale = Vector2(2.09, 2.09)
+texture_normal = ExtResource("5_1qfm4")
+texture_pressed = ExtResource("5_1qfm4")
+texture_hover = ExtResource("5_1qfm4")
+
+[node name="Label2" type="Label" parent="Control/start_game" unique_id=1894297259]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.066982
+offset_top = -51.559807
+offset_right = 163.93301
+offset_bottom = 19.440193
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.53, 0.53)
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("6_7b2w3")
+theme_override_font_sizes/font_size = 70
+text = "START"
+horizontal_alignment = 1
+
+[node name="p1_back" type="TextureButton" parent="Control" unique_id=1101787040]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 647.0
+offset_right = 429.0
+offset_bottom = 775.0
+scale = Vector2(0.235, 0.235)
+texture_normal = ExtResource("6_8lrcs")
+texture_pressed = ExtResource("6_8lrcs")
+texture_hover = ExtResource("6_8lrcs")
+flip_h = true
+
+[node name="p1_forward" type="TextureButton" parent="Control" unique_id=1307228313]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 638.0
+offset_right = 858.0
+offset_bottom = 766.0
+scale = Vector2(0.235, 0.235)
+texture_normal = ExtResource("6_8lrcs")
+texture_pressed = ExtResource("6_8lrcs")
+texture_hover = ExtResource("6_8lrcs")
+
+[node name="p2_back" type="TextureButton" parent="Control" unique_id=1209897491]
+layout_mode = 0
+offset_left = 1586.0
+offset_top = 653.0
+offset_right = 1714.0
+offset_bottom = 781.0
+scale = Vector2(0.235, 0.235)
+texture_normal = ExtResource("6_8lrcs")
+texture_pressed = ExtResource("6_8lrcs")
+texture_hover = ExtResource("6_8lrcs")
+flip_h = true
+
+[node name="p2_forward" type="TextureButton" parent="Control" unique_id=1196746378]
+layout_mode = 0
+offset_left = 2026.0
+offset_top = 657.0
+offset_right = 2154.0
+offset_bottom = 785.0
+scale = Vector2(0.235, 0.235)
+texture_normal = ExtResource("6_8lrcs")
+texture_pressed = ExtResource("6_8lrcs")
+texture_hover = ExtResource("6_8lrcs")
+
+[node name="player1" parent="." unique_id=1980784767 instance=ExtResource("6_1qfm4")]
+position = Vector2(580, 600)
+
+[node name="player2" parent="." unique_id=1107494219 instance=ExtResource("6_1qfm4")]
+position = Vector2(1863, 600)
+scale = Vector2(-10, 10)
+
+[node name="Sponsor1" type="AnimatedSprite2D" parent="." unique_id=649030050]
+position = Vector2(580, 222)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_vk8al")
+animation = &"red"
+
+[node name="Sponsor2" type="AnimatedSprite2D" parent="." unique_id=1459496479]
+position = Vector2(1863, 222)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fpt62")
+animation = &"blue"
+
+[connection signal="pressed" from="Control/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Control/p1_back" to="." method="_on_p_1_back_pressed"]
+[connection signal="pressed" from="Control/p1_forward" to="." method="_on_p_1_forward_pressed"]
+[connection signal="pressed" from="Control/p2_back" to="." method="_on_p_2_back_pressed"]
+[connection signal="pressed" from="Control/p2_forward" to="." method="_on_p_2_forward_pressed"]

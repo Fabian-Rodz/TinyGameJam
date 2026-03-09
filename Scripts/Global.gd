@@ -2,6 +2,8 @@ extends Node
 
 var score_player1: int = 0
 var score_player2: int = 0
+var p1_color: String = "red"
+var p2_color: String = "blue"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
