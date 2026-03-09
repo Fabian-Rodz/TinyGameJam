@@ -1,11 +1,35 @@
 [gd_scene format=3 uid="uid://dwat0ir10oylb"]
 
-[ext_resource type="Script" uid="uid://4uvb6756uxob" path="res://Scenes/start_screen.gd" id="1_ainjc"]
-[ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="1_i8r30"]
+[ext_resource type="Script" uid="uid://m3vti5r3eh2h" path="res://Scenes/start_screen.gd" id="1_ainjc"]
+[ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="2_5a7ho"]
+[ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="3_rjuq2"]
+[ext_resource type="Texture2D" uid="uid://gii4t68wd4xy" path="res://Assets/Cars/Red RC Car Sprite Sheet.png" id="4_akot6"]
+[ext_resource type="Texture2D" uid="uid://c82uk6efssup3" path="res://Assets/burger_bun_button.png" id="4_ssogg"]
+[ext_resource type="Texture2D" uid="uid://df7flt1dk821g" path="res://Assets/burger_button.png" id="5_akot6"]
+[ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="5_mtlf8"]
+[ext_resource type="Texture2D" uid="uid://d7jkf4piqx8p" path="res://Assets/Cars/Blue RC Car Sprite Sheet.png" id="5_rjuq2"]
+[ext_resource type="Texture2D" uid="uid://dee507q8ai4wg" path="res://Assets/Sponsors/p1/red_sprites.PNG" id="9_rjuq2"]
+[ext_resource type="Texture2D" uid="uid://piwoq5p2s1cf" path="res://Assets/Sponsors/p2/blue_sprites.PNG" id="10_c1457"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_i826k"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1457"]
+atlas = ExtResource("4_akot6")
+region = Rect2(4, 21.25, 24, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64bn7"]
+atlas = ExtResource("5_rjuq2")
+region = Rect2(6.5, 21.25, 21, 17)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ainjc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_357se"]
+atlas = ExtResource("9_rjuq2")
+region = Rect2(379.37207, 0, 253.77368, 215.35086)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hppi5"]
+atlas = ExtResource("10_c1457")
+region = Rect2(404.42273, 44.449768, 215.156, 204.52612)
 
 [node name="StartScreen" type="Control" unique_id=128043142]
 layout_mode = 3
@@ -30,6 +54,176 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_i826k")
 expand_mode = 1
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2002667554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -1.0
+offset_right = 216.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5a7ho")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=151264689]
+modulate = Color(0.8352941, 0.72156864, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1055.0
+offset_top = 96.0
+offset_right = 306.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_rjuq2")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1357951535]
+modulate = Color(0.8352941, 0.72156864, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 95.0
+offset_right = -757.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_rjuq2")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1244705614]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -253.50009
+offset_top = -565.00006
+offset_right = 253.50009
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1108431818]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer" unique_id=496943172]
+position = Vector2(112.50008, 86.00006)
+scale = Vector2(12.548332, 13.364041)
+texture = SubResource("AtlasTexture_c1457")
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/HBoxContainer" unique_id=502422540]
+position = Vector2(375.81, 112.63)
+scale = Vector2(12.529457, 13.560263)
+texture = SubResource("AtlasTexture_64bn7")
+flip_h = true
+
+[node name="start" type="TextureButton" parent="VBoxContainer" unique_id=695852061]
+material = SubResource("CanvasItemMaterial_ainjc")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_ssogg")
+texture_pressed = ExtResource("4_ssogg")
+texture_hover = ExtResource("4_ssogg")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/start" unique_id=1490711469]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -25.0
+offset_right = 110.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("5_mtlf8")
+theme_override_font_sizes/font_size = 70
+text = "START"
+horizontal_alignment = 1
+
+[node name="how to play" type="TextureButton" parent="VBoxContainer" unique_id=412848971]
+material = SubResource("CanvasItemMaterial_ainjc")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("5_akot6")
+texture_pressed = ExtResource("5_akot6")
+texture_hover = ExtResource("5_akot6")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/how to play" unique_id=1361624328]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -33.0
+offset_right = 107.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("5_mtlf8")
+theme_override_font_sizes/font_size = 70
+text = "Help"
+horizontal_alignment = 1
+
+[node name="exit" type="TextureButton" parent="VBoxContainer" unique_id=939528538]
+material = SubResource("CanvasItemMaterial_ainjc")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_ssogg")
+texture_pressed = ExtResource("4_ssogg")
+texture_hover = ExtResource("4_ssogg")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/exit" unique_id=1575340536]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.69
+offset_top = -101.98999
+offset_right = 107.31
+offset_bottom = -30.98999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("5_mtlf8")
+theme_override_font_sizes/font_size = 70
+text = "End"
+horizontal_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1344602654]
+position = Vector2(105, 87.00002)
+scale = Vector2(1.0402768, 1.1555814)
+texture = SubResource("AtlasTexture_357se")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1952077182]
+position = Vector2(1822, 95)
+scale = Vector2(1.2668598, 1.2801892)
+texture = SubResource("AtlasTexture_hppi5")
+
 [node name="Label" type="Label" parent="." unique_id=48862383]
 layout_mode = 1
 anchors_preset = 8
@@ -37,15 +231,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -201.0
-offset_top = -92.5
-offset_right = 201.0
-offset_bottom = 92.5
+offset_left = -802.5
+offset_top = -304.39502
+offset_right = 802.5
+offset_bottom = -19.014954
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 135
-text = "START"
+theme_override_colors/font_color = Color(1, 0.84313726, 0.5254902, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.57254905)
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/shadow_offset_y = 11
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 36
+theme_override_fonts/font = ExtResource("5_mtlf8")
+theme_override_font_sizes/font_size = 200
+text = "Calorie Rallie"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Label" unique_id=1481099009]
 layout_mode = 1
@@ -62,32 +263,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "<--- exit button"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=555961535]
-layout_mode = 1
-offset_right = 722.0
-offset_bottom = 424.0
-
-[node name="start" type="TextureButton" parent="HBoxContainer" unique_id=695852061]
-material = SubResource("CanvasItemMaterial_ainjc")
-layout_mode = 2
-texture_normal = ExtResource("1_i8r30")
-texture_pressed = ExtResource("1_i8r30")
-texture_hover = ExtResource("1_i8r30")
-
-[node name="how to play" type="TextureButton" parent="HBoxContainer" unique_id=412848971]
-material = SubResource("CanvasItemMaterial_ainjc")
-layout_mode = 2
-texture_normal = ExtResource("1_i8r30")
-texture_pressed = ExtResource("1_i8r30")
-texture_hover = ExtResource("1_i8r30")
-
-[node name="exit" type="TextureButton" parent="HBoxContainer" unique_id=939528538]
-material = SubResource("CanvasItemMaterial_ainjc")
-layout_mode = 2
-texture_normal = ExtResource("1_i8r30")
-texture_pressed = ExtResource("1_i8r30")
-texture_hover = ExtResource("1_i8r30")
-
-[connection signal="pressed" from="HBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="HBoxContainer/how to play" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="HBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/how to play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
