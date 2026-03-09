@@ -7,7 +7,9 @@ extends Node2D
 
 @onready var spawn_points = $"../SpawnPoints".get_children()
 @onready var timer: Timer = $Timer
+@onready var start_timer: Timer = $"../StartTimer"
 
+var spawn_enabled = false
 
 func _ready() -> void:
 	randomize()
@@ -21,39 +23,41 @@ func _on_timer_timeout() -> void:
 	timer.start()
 
 func spawn_obstacle() -> void:
-	var who_spawns= randi_range(1,3)
-	print(who_spawns)
-	if obstacle_scene == null or food_scene == null:
-		print("Obstacle or food scene not assigned!")
-		return
+	if spawn_enabled:
+		var who_spawns= randi_range(1,3)
+		print(who_spawns)
+		if obstacle_scene == null or food_scene == null:
+			print("Obstacle or food scene not assigned!")
+			return
 
-	if spawn_points.size() < 2:
-		print("Need at least 2 spawn points!")
-		return
+		if spawn_points.size() < 2:
+			print("Need at least 2 spawn points!")
+			return
 
-	var lanes = spawn_points.duplicate()
-	lanes.shuffle()
+		var lanes = spawn_points.duplicate()
+		lanes.shuffle()
 
-	var obstacle_lane = lanes[0]
-	var food_lane = lanes[1]
+		var obstacle_lane = lanes[0]
+		var food_lane = lanes[1]
 
-	var obstacle = obstacle_scene.instantiate()
-	if who_spawns!=1:
-		get_tree().current_scene.add_child(obstacle)
-		obstacle.global_position = obstacle_lane.global_position + spawn_offset
-		print("Obstacle final pos:", obstacle.global_position)
-	if who_spawns!=2:
-		var food = food_scene.instantiate()
-		get_tree().current_scene.add_child(food)
-		food.global_position = food_lane.global_position + spawn_offset
-		print("Food final pos:", food.global_position)
+		var obstacle = obstacle_scene.instantiate()
+		if who_spawns!=1:
+			get_tree().current_scene.add_child(obstacle)
+			obstacle.global_position = obstacle_lane.global_position + spawn_offset
+			print("Obstacle final pos:", obstacle.global_position)
+		if who_spawns!=2:
+			var food = food_scene.instantiate()
+			get_tree().current_scene.add_child(food)
+			food.global_position = food_lane.global_position + spawn_offset
+			print("Food final pos:", food.global_position)
 
 
 func _set_next_spawn_time() -> void:
 	timer.wait_time = randf_range(min_spawn_time, max_spawn_time)
 
 
-
+func _on_start_timer_timeout() -> void:
+	spawn_enabled = true
 
 #
 #func _ready() -> void:

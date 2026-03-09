@@ -30,20 +30,21 @@ enum Car_State{
 var current_state: Car_State = Car_State.Running
 
 func change_state(newState):
-	current_state = newState
-	match current_state:
-		Car_State.Startup:
-			sprite.play("startup")
-		Car_State.Running:
-			sprite.play("running")
-		Car_State.Hit:
-			is_hit = true
-			hit_counter = 0
-			sprite.stop()
-			crash_speed = 100
-		Car_State.Jumping:
-			car_collision.set_deferred("disabled",true)
-			sprite.play("jump")
+	if not is_hit:
+		current_state = newState
+		match current_state:
+			Car_State.Startup:
+				sprite.play("startup")
+			Car_State.Running:
+				sprite.play("running")
+			Car_State.Hit:
+				is_hit = true
+				hit_counter = 0
+				sprite.stop()
+				crash_speed = 100
+			Car_State.Jumping:
+				car_collision.set_deferred("disabled",true)
+				sprite.play("jump")
 
 # Car Colors
 var color
@@ -132,6 +133,8 @@ func _on_car_area_area_entered(area: Area2D) -> void:
 		global_position.y = move_toward(global_position.y,global_position.y + direction.y,10)
 	if "Obstacle" in area.name:
 		change_state(Car_State.Hit)
+		print("Obstacle Collision")
 	if "Food" in area.name:
 		points += 1
 		print("Points: " + str(points))
+	print("Collision")
