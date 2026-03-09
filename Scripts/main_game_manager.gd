@@ -6,7 +6,8 @@ extends Node2D
 @onready var sponsor_2: Node2D = $sponsor2
 @onready var p1_spawn: Node2D = $P1Spawn
 @onready var p2_spawn: Node2D = $P2Spawn
-@onready var start_timer: Timer = $StartTimer
+@onready var start_timer: Timer = $"../StartTimer"
+
 @onready var countdown: Label = $Countdown/CountdownLabel
 @onready var p1_points_label: Label = $P1Points/P1PointsLabel
 @onready var p2_points_label: Label = $P2Points/P2PointsLabel
@@ -19,10 +20,14 @@ var p1_state = 0
 var p2_state = 0
 # Called when the node enters the scene tree for the first time.
 
+func change_state_all(state:int):
+	p1_state = state
+	p2_state = state
+	player_1.change_state(p1_state)
+	player_2.change_state(p2_state)
 
 func start_game():
-	p1_state = 0
-	p2_state = 0
+	change_state_all(0)
 	player_1.position = p1_spawn.position
 	player_2.position = p2_spawn.position
 	p1_points_label.hide()
@@ -60,14 +65,11 @@ func _process(delta: float) -> void:
 	elif start_timer.time_left > 1:
 		countdown.text = "1"
 	else:
-		p1_state = 1
-		p2_state = 1
+		change_state_all(1)
 		p1_points_label.show()
 		p2_points_label.show()
 		countdown.text = "GO!"
-	
-	player_1.change_state(p1_state)
-	player_2.change_state(p2_state)
+
 	if not player_1.is_hit:
 		sponsor_1.change_sprite("1st")
 	if not player_2.is_hit:
