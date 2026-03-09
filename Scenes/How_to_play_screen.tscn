@@ -2,10 +2,28 @@
 
 [ext_resource type="Script" uid="uid://bkldoano1pmb0" path="res://Scenes/how_to_play_screen.gd" id="1_17iao"]
 [ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="1_v70uw"]
+[ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="3_0gqym"]
+[ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="4_m3hui"]
+[ext_resource type="Texture2D" uid="uid://dee507q8ai4wg" path="res://Assets/Sponsors/p1/red_sprites.PNG" id="5_mcxdq"]
+[ext_resource type="Texture2D" uid="uid://piwoq5p2s1cf" path="res://Assets/Sponsors/p2/blue_sprites.PNG" id="6_g32fb"]
+[ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="7_368x7"]
+[ext_resource type="FontFile" uid="uid://c2ru8765h62la" path="res://Assets/font copy/silkscreen/slkscreb.ttf" id="8_0gqym"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_17iao"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgghr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3lwqj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_smhfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3lqi"]
+atlas = ExtResource("5_mcxdq")
+region = Rect2(379.37207, 0, 253.77368, 215.35086)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfxkt"]
+atlas = ExtResource("6_g32fb")
+region = Rect2(404.42273, 44.449768, 215.156, 204.52612)
 
 [node name="how to play" type="Node" unique_id=2055831611]
 script = ExtResource("1_17iao")
@@ -44,5 +62,174 @@ offset_bottom = 372.792
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 135
 text = "how to play"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=764861325]
+offset_right = 1162.0
+offset_bottom = 658.0
+texture = SubResource("CanvasTexture_3lwqj")
+
+[node name="Label2" type="Label" parent="." unique_id=1755603626]
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.071
+offset_left = 403.0
+offset_top = 184.0
+offset_right = 756.61597
+offset_bottom = 332.792
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 135
+text = "END
+"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1243822387]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -0.5
+offset_right = 1155.0
+offset_bottom = 654.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_smhfx")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1128379982]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -1.0
+offset_right = 216.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0gqym")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1864461189]
+modulate = Color(0.8352941, 0.72156864, 1, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1055.0
+offset_top = 96.0
+offset_right = 306.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_m3hui")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=114400868]
+modulate = Color(0.8352941, 0.72156864, 1, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 95.0
+offset_right = -757.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_m3hui")
+expand_mode = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=828349803]
+position = Vector2(105, 87.00002)
+scale = Vector2(1.0402768, 1.1555814)
+texture = SubResource("AtlasTexture_d3lqi")
+
+[node name="Label" type="Label" parent="Sprite2D2" unique_id=814057819]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -147.64822
+offset_top = -99.04107
+offset_right = -107.64822
+offset_bottom = -76.04108
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Player 1"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1672623717]
+position = Vector2(1809, 92)
+scale = Vector2(1.2668598, 1.2801892)
+texture = SubResource("AtlasTexture_jfxkt")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=316586699]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.8658
+offset_top = -89.17322
+offset_right = -84.8658
+offset_bottom = -66.17322
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Player 2"
+
+[node name="Label3" type="Label" parent="." unique_id=517882825]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -842.0
+offset_top = -414.0
+offset_right = 841.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0.5254902, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.57254905)
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/shadow_offset_y = 11
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 36
+theme_override_fonts/font = ExtResource("7_368x7")
+theme_override_font_sizes/font_size = 150
+text = "You are
+ a delivery driver"
+horizontal_alignment = 1
+
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=163200672]
+modulate = Color(0.5188342, 0.4113044, 0.5543902, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 380.0
+offset_right = -35.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_smhfx")
+expand_mode = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1117526918]
+offset_left = 76.0
+offset_top = 372.0
+offset_right = 1852.0
+offset_bottom = 862.0
+theme_override_colors/font_color = Color(0.9999998, 0.93906605, 0.8203818, 1)
+theme_override_fonts/font = ExtResource("8_0gqym")
+theme_override_font_sizes/font_size = 40
+text = "Race against the competing company to deliver food
+
+
+Gather food items along the way to increase points
+
+
+
+Careful! their might be construction on the road"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Control/play" to="." method="_on_return_pressed"]
