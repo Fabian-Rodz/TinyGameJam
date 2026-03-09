@@ -3,35 +3,94 @@
 [ext_resource type="Script" uid="uid://bykf7jcudlsh0" path="res://Scripts/main_game_test.gd" id="1_mshqt"]
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="2_o4yed"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="3_o4yed"]
-[ext_resource type="PackedScene" uid="uid://110m488ywy6w" path="res://Scenes/Sponsor.tscn" id="4_vibc5"]
+[ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="4_vibc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xioud"]
+size = Vector2(86, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vibc5"]
+size = Vector2(1268.0889, 1411.4941)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8v5u"]
+size = Vector2(211.95898, 6851.073)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62uqn"]
+size = Vector2(211.95898, 6851.073)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfogk"]
 size = Vector2(1268.0889, 1211.7544)
 
 [node name="CarTest" type="Node2D" unique_id=891284403]
 script = ExtResource("1_mshqt")
 
+[node name="Obstacle" type="Area2D" parent="." unique_id=1275949913]
+position = Vector2(1337, 471)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle" unique_id=1774648975]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xioud")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle" unique_id=216520882]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_o4yed")
+metadata/_edit_lock_ = true
+
+[node name="Food" type="Area2D" parent="." unique_id=1070103697]
+modulate = Color(0.8321958, 0.35190886, 6.930828e-06, 1)
+position = Vector2(1299, 625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food" unique_id=975646039]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xioud")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Food" unique_id=590171841]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_o4yed")
+metadata/_edit_lock_ = true
+
 [node name="player1" parent="." unique_id=1980784767 instance=ExtResource("2_o4yed")]
 position = Vector2(607, 389)
 
 [node name="player2" parent="." unique_id=1363484307 instance=ExtResource("2_o4yed")]
-position = Vector2(1198, 398)
+position = Vector2(1198, 389)
 
-[node name="Sponsor" parent="." unique_id=701603321 instance=ExtResource("4_vibc5")]
-position = Vector2(1568, 98)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=604607441]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=816027246]
 position = Vector2(900.75, 92.87492)
 scale = Vector2(1.6371094, 0.15019543)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=220435634]
-position = Vector2(0.15270996, 20.806702)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=231594852]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 99.86987)
+scale = Vector2(0.99999994, 1.1560466)
+texture = ExtResource("3_o4yed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=220435634]
+modulate = Color(0.5001595, 0.9790471, 0.88425416, 1)
+position = Vector2(0.15270996, 120.676636)
 scale = Vector2(0.9999998, 1)
 shape = SubResource("RectangleShape2D_vibc5")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=231594852]
-modulate = Color(0, 0, 0, 1)
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("3_o4yed")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1234641509]
+position = Vector2(-655.27045, 3173.3657)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_g8v5u")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1284326827]
+position = Vector2(728.87616, 3173.3657)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_62uqn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=870867217]
+position = Vector2(0.15270996, 5966.3936)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_jfogk")
+
+[node name="sponsor1" parent="." unique_id=54442841 instance=ExtResource("4_vibc5")]
+position = Vector2(247, 109)
+
+[node name="sponsor2" parent="." unique_id=701603321 instance=ExtResource("4_vibc5")]
+position = Vector2(1568, 109)

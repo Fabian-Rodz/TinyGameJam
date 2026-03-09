@@ -27,10 +27,6 @@ region = Rect2(64, 192, 32, 32)
 atlas = ExtResource("3_x3wgy")
 region = Rect2(96, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
-atlas = ExtResource("3_x3wgy")
-region = Rect2(32, 64, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
 atlas = ExtResource("3_x3wgy")
 region = Rect2(64, 64, 32, 32)
@@ -94,14 +90,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7dp3o")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h4iuc")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fd4e3")
 }, {
@@ -117,7 +110,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fs7ks")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 6.0
 }, {
@@ -169,10 +162,6 @@ region = Rect2(64, 192, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuaoq"]
 atlas = ExtResource("4_3smsa")
 region = Rect2(96, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wohnl"]
-atlas = ExtResource("4_3smsa")
-region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36dho"]
 atlas = ExtResource("4_3smsa")
@@ -237,14 +226,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xuaoq")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wohnl")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_36dho")
 }, {
@@ -260,7 +246,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8gxox")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 6.0
 }, {
@@ -312,10 +298,6 @@ region = Rect2(64, 192, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8eeqe"]
 atlas = ExtResource("5_8erm5")
 region = Rect2(96, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5x828"]
-atlas = ExtResource("5_8erm5")
-region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1k8q"]
 atlas = ExtResource("5_8erm5")
@@ -380,14 +362,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8eeqe")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5x828")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c1k8q")
 }, {
@@ -403,7 +382,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ie7r7")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 6.0
 }, {
@@ -455,10 +434,6 @@ region = Rect2(64, 192, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuaet"]
 atlas = ExtResource("6_f1ek2")
 region = Rect2(96, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqbau"]
-atlas = ExtResource("6_f1ek2")
-region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5f5t"]
 atlas = ExtResource("6_f1ek2")
@@ -523,14 +498,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nuaet")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bqbau")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f5f5t")
 }, {
@@ -546,7 +518,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_by7i4")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 6.0
 }, {
@@ -601,27 +573,25 @@ texture = ExtResource("2_6t5aa")
 
 [node name="RedAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=111090798]
 sprite_frames = SubResource("SpriteFrames_0gysh")
-animation = &"startup"
+animation = &"jump"
 autoplay = "running"
-frame = 1
+frame = 4
+frame_progress = 1.0
 
 [node name="YellowAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=828305487]
 visible = false
 sprite_frames = SubResource("SpriteFrames_7ldla")
-animation = &"running"
-frame_progress = 0.7199595
+animation = &"jump"
 
 [node name="BlueAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1009951918]
 visible = false
 sprite_frames = SubResource("SpriteFrames_n1x1j")
-animation = &"running"
-frame_progress = 0.77923846
+animation = &"jump"
 
 [node name="GreenAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=128483279]
 visible = false
 sprite_frames = SubResource("SpriteFrames_jsob3")
-animation = &"running"
-frame_progress = 0.06274602
+animation = &"jump"
 
 [node name="EnvironmentalCollision1" type="CollisionShape2D" parent="." unique_id=1074797181]
 position = Vector2(-3.5, 10.5)
