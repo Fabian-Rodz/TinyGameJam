@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var scroll_speed: float = 250.0
+@export var scroll_speed: float = 1000.0
 
 @onready var road_1: Sprite2D = $Road1
 @onready var road_2: Sprite2D = $Road2

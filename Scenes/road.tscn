@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://b25o7tau046ak" path="res://Scenes/road.gd" id="1_w872l"]
 [ext_resource type="Script" uid="uid://dwyxsejm2mrdm" path="res://Scenes/obstacle_manager.gd" id="1_wtjdh"]
 [ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="2_80q1u"]
-[ext_resource type="PackedScene" path="res://Scenes/node_2d.tscn" id="3_w872l"]
+[ext_resource type="PackedScene" uid="uid://c8uo7x0hmkmgx" path="res://Scenes/node_2d.tscn" id="3_w872l"]
 [ext_resource type="PackedScene" uid="uid://ino27gljdou8" path="res://Scenes/food.tscn" id="5_onwkh"]
 [ext_resource type="AudioStream" uid="uid://f0ikwducd4xj" path="res://Assets/road_related/viacheslavstarostin-action-drive-racing-music-429957.mp3" id="6_onwkh"]
-[ext_resource type="Script" uid="uid://bykf7jcudlsh0" path="res://Scripts/main_game_manager.gd" id="7_fycqo"]
+[ext_resource type="Script" uid="uid://c4nuk3wgqv164" path="res://Scripts/main_game_manager.gd" id="7_fycqo"]
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="8_fiiv4"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="8_isxhl"]
-[ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="9_isxhl"]
+[ext_resource type="PackedScene" path="res://Scenes/Sponsor.tscn" id="9_isxhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fiiv4"]
 size = Vector2(98, 1279)
@@ -35,25 +35,25 @@ scale = Vector2(3.8838658, 3)
 texture = ExtResource("2_80q1u")
 
 [node name="Road1" type="Sprite2D" parent="." unique_id=1427993941]
-position = Vector2(1983, 519)
-scale = Vector2(12.171875, 1.938)
+position = Vector2(1983, 629.5)
+scale = Vector2(12.171875, 1.4244791)
 texture = ExtResource("1_s5bdx")
 
 [node name="Road2" type="Sprite2D" parent="." unique_id=1473879206]
-position = Vector2(4496.5, 519)
-scale = Vector2(13.434896, 1.945)
+position = Vector2(4499.5, 630)
+scale = Vector2(13.4192705, 1.4322916)
 texture = ExtResource("1_s5bdx")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=779977872]
 
 [node name="Lane1" type="Marker2D" parent="SpawnPoints" unique_id=527850799]
-position = Vector2(1441, 88)
+position = Vector2(1401.49, 486.97)
 
 [node name="Lane2" type="Marker2D" parent="SpawnPoints" unique_id=1071673550]
-position = Vector2(1450, 310)
+position = Vector2(1400, 651)
 
 [node name="Lane3" type="Marker2D" parent="SpawnPoints" unique_id=1927541545]
-position = Vector2(1446, 497)
+position = Vector2(1398, 794)
 
 [node name="ObstacleManager" type="Node2D" parent="." unique_id=1750987065]
 script = ExtResource("1_wtjdh")
@@ -63,6 +63,9 @@ obstacle_scene = ExtResource("3_w872l")
 [node name="Timer" type="Timer" parent="ObstacleManager" unique_id=1548657478]
 wait_time = 1.5
 autostart = true
+
+[node name="Timer2" type="Timer" parent="ObstacleManager" unique_id=1943853123]
+wait_time = 1.5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1642856717]
 stream = ExtResource("6_onwkh")
@@ -148,7 +151,6 @@ horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Boundaries" type="StaticBody2D" parent="." unique_id=47435769]
-visible = false
 collision_layer = 4
 collision_mask = 2
 
@@ -165,8 +167,9 @@ position = Vector2(2523, 275.5)
 shape = SubResource("RectangleShape2D_kqtd0")
 
 [node name="Top" type="CollisionShape2D" parent="Boundaries" unique_id=730993478]
-position = Vector2(1207, 224)
+position = Vector2(1215, 407)
 shape = SubResource("RectangleShape2D_isxhl")
 
 [connection signal="timeout" from="ObstacleManager/Timer" to="ObstacleManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="ObstacleManager/Timer2" to="ObstacleManager" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="GameManager/StartTimer" to="GameManager" method="_on_start_timer_timeout"]
