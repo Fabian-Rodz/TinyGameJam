@@ -64,6 +64,7 @@ script = ExtResource("1_fhto3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=206557578]
 sprite_frames = SubResource("SpriteFrames_4hb68")
 animation = &"burger"
+offset = Vector2(-50, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334590341]
 shape = SubResource("CircleShape2D_t0fp1")
