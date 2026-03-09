@@ -1,6 +1,6 @@
 extends Area2D
 
-
+@export var speed: float = 300.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var food_types = Array($AnimatedSprite2D.sprite_frames.get_animation_names())
@@ -10,7 +10,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	position.x -= speed * delta
+
+	if global_position.x < -500:
+		queue_free()
 	#queue_free()
 	
 func _on_visible_on_screen_notifier_2d_screen_exited():
