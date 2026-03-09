@@ -1,17 +1,15 @@
 [gd_scene format=3 uid="uid://cmm5a4j7y4cl0"]
 
 [ext_resource type="Script" uid="uid://bkldoano1pmb0" path="res://Scenes/how_to_play_screen.gd" id="1_17iao"]
-[ext_resource type="Texture2D" uid="uid://yfqn8i3wqnxs" path="res://icon.svg" id="1_v70uw"]
 [ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="3_0gqym"]
 [ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="4_m3hui"]
 [ext_resource type="Texture2D" uid="uid://dee507q8ai4wg" path="res://Assets/Sponsors/p1/red_sprites.PNG" id="5_mcxdq"]
 [ext_resource type="Texture2D" uid="uid://piwoq5p2s1cf" path="res://Assets/Sponsors/p2/blue_sprites.PNG" id="6_g32fb"]
 [ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="7_368x7"]
 [ext_resource type="FontFile" uid="uid://c2ru8765h62la" path="res://Assets/font copy/silkscreen/slkscreb.ttf" id="8_0gqym"]
+[ext_resource type="Texture2D" uid="uid://c82uk6efssup3" path="res://Assets/burger_bun_button.png" id="8_m3hui"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_17iao"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgghr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_3lwqj"]
 
@@ -24,6 +22,8 @@ region = Rect2(379.37207, 0, 253.77368, 215.35086)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfxkt"]
 atlas = ExtResource("6_g32fb")
 region = Rect2(404.42273, 44.449768, 215.156, 204.52612)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kgghr"]
 
 [node name="how to play" type="Node" unique_id=2055831611]
 script = ExtResource("1_17iao")
@@ -39,17 +39,6 @@ layout_mode = 0
 offset_right = 1162.0
 offset_bottom = 658.0
 texture = SubResource("CanvasTexture_17iao")
-
-[node name="play" type="TextureButton" parent="Control" unique_id=2142163418]
-material = SubResource("CanvasItemMaterial_kgghr")
-layout_mode = 0
-offset_left = 14.0
-offset_top = 1.0
-offset_right = 142.0
-offset_bottom = 129.0
-texture_normal = ExtResource("1_v70uw")
-texture_pressed = ExtResource("1_v70uw")
-texture_hover = ExtResource("1_v70uw")
 
 [node name="Label" type="Label" parent="." unique_id=981306746]
 anchors_preset = -1
@@ -232,4 +221,40 @@ Careful! their might be construction on the road"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Control/play" to="." method="_on_return_pressed"]
+[node name="play" type="TextureButton" parent="." unique_id=2142163418]
+material = SubResource("CanvasItemMaterial_kgghr")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -173.93
+offset_top = -104.01001
+offset_right = 162.69995
+offset_bottom = 3.0999756
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("8_m3hui")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="play" unique_id=2035983655]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -25.0
+offset_right = 110.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("7_368x7")
+theme_override_font_sizes/font_size = 70
+text = "Back"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="play" to="." method="_on_return_pressed"]
