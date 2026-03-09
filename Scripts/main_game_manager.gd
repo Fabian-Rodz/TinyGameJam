@@ -13,6 +13,7 @@ extends Node2D
 @onready var p1_points_label: Label = $P1Points/P1PointsLabel
 @onready var p2_points_label: Label = $P2Points/P2PointsLabel
 
+
 # Equal them to "red", "yellow", "blue", or "green" to change color
 var p1_color
 var p2_color
@@ -55,8 +56,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	p1_points_label.text = str(player_1.points)
 	p2_points_label.text = str(player_2.points)
+	Global.score_player2 = player_2.points
+	Global.score_player1 = player_1.points
 
 
 	if start_timer.time_left >= 4:
