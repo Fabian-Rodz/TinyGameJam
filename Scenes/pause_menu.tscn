@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://785o0eygd15t"]
+[gd_scene format=3 uid="uid://dls1y30w6b8b2"]
 
-[ext_resource type="Script" uid="uid://b1msljl3j4h1r" path="res://pause_menu.gd" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://csjaahqsmajxs" path="res://pause_menu.gd" id="1_emv3i"]
 [ext_resource type="Texture2D" uid="uid://ocfy7i7lm0h8" path="res://Assets/road_related/fast-food-seamless-pattern-pixel-art-slice-of-pizza-french-fries-burger-hot-dog-90s-80s-8-bit-old-arcade-game-style-illustration-vector.png" id="2_k0w1u"]
+[ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="3_1och7"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=398903297]
 process_mode = 3
@@ -11,9 +12,14 @@ script = ExtResource("1_emv3i")
 offset_right = 1960.0
 offset_bottom = 900.0
 
+[node name="FastFoodSeamlessPatternPixelArtSliceOfPizzaFrenchFriesBurgerHotDog90s80s8BitOldArcadeGameStyleIllustrationVector2" type="Sprite2D" parent="." unique_id=21914563]
+position = Vector2(1971.2422, 457.00003)
+scale = Vector2(1.5137914, 0.9470974)
+texture = ExtResource("2_k0w1u")
+
 [node name="FastFoodSeamlessPatternPixelArtSliceOfPizzaFrenchFriesBurgerHotDog90s80s8BitOldArcadeGameStyleIllustrationVector" type="Sprite2D" parent="." unique_id=1487273064]
-position = Vector2(977, 457.5)
-scale = Vector2(2, 0.93367344)
+position = Vector2(480, 455)
+scale = Vector2(1.5816327, 0.93367344)
 texture = ExtResource("2_k0w1u")
 
 [node name="Label" type="Label" parent="." unique_id=1448791635]
@@ -23,7 +29,11 @@ offset_right = 1243.0
 offset_bottom = 634.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.9098039, 0.33333334, 0.6156863, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 28
+theme_override_fonts/font = ExtResource("3_1och7")
+theme_override_font_sizes/font_size = 200
 text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1

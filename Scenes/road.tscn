@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b25o7tau046ak" path="res://Scenes/road.gd" id="1_w872l"]
 [ext_resource type="Script" uid="uid://dwyxsejm2mrdm" path="res://Scenes/obstacle_manager.gd" id="1_wtjdh"]
 [ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="2_80q1u"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="2_o1vn6"]
+[ext_resource type="PackedScene" uid="uid://dls1y30w6b8b2" path="res://Scenes/pause_menu.tscn" id="2_o1vn6"]
 [ext_resource type="PackedScene" uid="uid://c8uo7x0hmkmgx" path="res://Scenes/node_2d.tscn" id="3_w872l"]
 [ext_resource type="PackedScene" uid="uid://ino27gljdou8" path="res://Scenes/food.tscn" id="5_onwkh"]
 [ext_resource type="AudioStream" uid="uid://f0ikwducd4xj" path="res://Assets/road_related/viacheslavstarostin-action-drive-racing-music-429957.mp3" id="6_onwkh"]
@@ -40,8 +40,8 @@ scale = Vector2(3.8838658, 3)
 texture = ExtResource("2_80q1u")
 
 [node name="Road1" type="Sprite2D" parent="." unique_id=1427993941]
-position = Vector2(1983, 630)
-scale = Vector2(12.171875, 1.4244791)
+position = Vector2(1983, 628.75)
+scale = Vector2(12.171875, 1.4309897)
 texture = ExtResource("1_s5bdx")
 
 [node name="Road2" type="Sprite2D" parent="." unique_id=1473879206]
