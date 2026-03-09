@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var obstacle_scene: PackedScene
-@export var spawn_offset: Vector2 = Vector2(0, 40)
-@export var min_spawn_time: float = 2.0
-@export var max_spawn_time: float = 4.0
+@export var spawn_offset: Vector2 = Vector2(900, 40)
+@export var min_spawn_time: float = 2.5
+@export var max_spawn_time: float = 4.5
 
 @onready var spawn_points = $"../SpawnPoints".get_children()
 @onready var timer: Timer = $Timer
