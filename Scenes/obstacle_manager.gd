@@ -10,8 +10,6 @@ extends Node2D
 
 
 func _ready() -> void:
-	randomize()
-	_set_next_spawn_time()
 
 	timer.start()
 

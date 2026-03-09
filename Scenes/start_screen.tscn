@@ -248,21 +248,6 @@ theme_override_font_sizes/font_size = 200
 text = "Calorie Rallie"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Label" unique_id=1481099009]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = -0.827
-anchor_right = 0.2
-anchor_bottom = -0.827
-offset_left = -28.400002
-offset_top = -19.50499
-offset_right = 172.6
-offset_bottom = 19.49501
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "<--- exit button"
-
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/how to play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
