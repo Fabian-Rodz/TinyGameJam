@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwi0spxsvs528"]
 
-[ext_resource type="Script" uid="uid://dyla8cxd0jv8s" path="res://Scripts/main_game_test.gd" id="1_mshqt"]
+[ext_resource type="Script" path="res://Scripts/main_game_test.gd" id="1_mshqt"]
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="2_o4yed"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="3_o4yed"]
 [ext_resource type="PackedScene" path="res://Scenes/Sponsor.tscn" id="4_vibc5"]
@@ -26,6 +26,7 @@ script = ExtResource("1_mshqt")
 
 [node name="Obstacle" type="Area2D" parent="." unique_id=1275949913]
 position = Vector2(1337, 471)
+scale = Vector2(0.92, 0.92)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle" unique_id=1774648975]
 position = Vector2(0, -0.5)
@@ -83,4 +84,5 @@ position = Vector2(247, 109)
 position = Vector2(1568, 109)
 
 [node name="Food" parent="." unique_id=1290458680 instance=ExtResource("5_g8v5u")]
-position = Vector2(872, 420)
+position = Vector2(1051, 430)
+scale = Vector2(2, 2)
