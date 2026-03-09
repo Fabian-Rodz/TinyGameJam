@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c4nuk3wgqv164" path="res://Scripts/main_game_manager.gd" id="7_fycqo"]
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="8_fiiv4"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="8_isxhl"]
-[ext_resource type="PackedScene" path="res://Scenes/Sponsor.tscn" id="9_isxhl"]
+[ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="9_isxhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fiiv4"]
 size = Vector2(98, 1279)
@@ -61,11 +61,11 @@ food_scene = ExtResource("5_onwkh")
 obstacle_scene = ExtResource("3_w872l")
 
 [node name="Timer" type="Timer" parent="ObstacleManager" unique_id=1548657478]
-wait_time = 1.5
+wait_time = 5.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="ObstacleManager" unique_id=1943853123]
-wait_time = 1.5
+wait_time = 5.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1642856717]
 stream = ExtResource("6_onwkh")
