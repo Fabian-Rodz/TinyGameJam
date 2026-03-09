@@ -35,6 +35,7 @@ func spawn_obstacle() -> void:
 	spawn_food(lane)
 
 func spawn_food(used_lane) -> void:
+
 	print("spawn_food called")
 	print("food_scene inside spawn_food:", food_scene)
 
