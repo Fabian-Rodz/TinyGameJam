@@ -64,6 +64,11 @@ animations = [{
 "name": &"loser",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_blqsi")
@@ -519,7 +524,7 @@ script = ExtResource("1_6a80s")
 
 [node name="P1RedAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=211921784]
 sprite_frames = SubResource("SpriteFrames_17qn8")
-animation = &"winner"
+animation = &"new_animation"
 autoplay = "1st"
 
 [node name="P1YellowAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=983136875]

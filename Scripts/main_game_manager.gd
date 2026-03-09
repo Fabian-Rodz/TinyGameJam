@@ -14,9 +14,7 @@ extends Node2D
 @onready var p2_points_label: Label = $P2Points/P2PointsLabel
 
 
-# Equal them to "red", "yellow", "blue", or "green" to change color
-var p1_color
-var p2_color
+
 # 0 = startup, 1 = running, 2 = hit, 3 = jump
 var p1_state = 0
 var p2_state = 0
@@ -35,20 +33,23 @@ func start_game():
 	p1_points_label.hide()
 	p2_points_label.hide()
 	countdown.show()
+	print("P1 color: " + Global.p1_color)
+	player_1.change_color(Global.p1_color)
+	sponsor_1.change_color(Global.p1_color)
+	player_2.change_color(Global.p2_color)
+	sponsor_2.change_color(Global.p2_color)
 	start_timer.start()
 
 func _ready() -> void:
 	player_1.is_p1 = true
 	sponsor_1.is_p1 = true
-	p1_color = "red"
-	player_1.change_color(p1_color)
-	sponsor_1.change_color(p1_color)
+	player_1.change_color(Global.p1_color)
+	sponsor_1.change_color(Global.p1_color)
 	
 	player_2.is_p1 = false
 	sponsor_2.is_p1 = false
-	p2_color = "blue"
-	player_2.change_color(p2_color)
-	sponsor_2.change_color(p2_color)
+	player_2.change_color(Global.p2_color)
+	sponsor_2.change_color(Global.p2_color)
 	
 	start_game()
 
