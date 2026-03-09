@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cj4woq0r1d4an"]
 
-[ext_resource type="Script" uid="uid://c115s3ohp2ask" path="res://Scenes/food.gd" id="1_fhto3"]
+[ext_resource type="Script" uid="uid://3oc1c87apa00" path="res://Scenes/food.gd" id="1_fhto3"]
 [ext_resource type="Texture2D" uid="uid://cahyvtkhifmbx" path="res://Assets/Burger_Asset_64x64.png" id="1_j4qko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhto3"]
@@ -57,7 +57,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t0fp1"]
 radius = 34.234486
 
-[node name="Food" type="RigidBody2D" unique_id=1037066999]
+[node name="Food" type="Area2D" unique_id=1290458680]
 script = ExtResource("1_fhto3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=206557578]

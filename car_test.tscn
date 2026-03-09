@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="2_o4yed"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="3_o4yed"]
 [ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="4_vibc5"]
+[ext_resource type="PackedScene" uid="uid://cj4woq0r1d4an" path="res://Scenes/food.tscn" id="5_g8v5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xioud"]
 size = Vector2(86, 83)
@@ -32,20 +33,6 @@ shape = SubResource("RectangleShape2D_xioud")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle" unique_id=216520882]
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("3_o4yed")
-metadata/_edit_lock_ = true
-
-[node name="Food" type="Area2D" parent="." unique_id=1070103697]
-modulate = Color(0.8321958, 0.35190886, 6.930828e-06, 1)
-position = Vector2(1299, 625)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food" unique_id=975646039]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_xioud")
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Food" unique_id=590171841]
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_o4yed")
 metadata/_edit_lock_ = true
@@ -94,3 +81,6 @@ position = Vector2(247, 109)
 
 [node name="sponsor2" parent="." unique_id=701603321 instance=ExtResource("4_vibc5")]
 position = Vector2(1568, 109)
+
+[node name="Food" parent="." unique_id=1290458680 instance=ExtResource("5_g8v5u")]
+position = Vector2(872, 420)
