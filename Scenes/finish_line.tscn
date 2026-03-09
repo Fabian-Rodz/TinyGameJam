@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://s1qlkoebsytb"]
+
+[ext_resource type="Texture2D" uid="uid://dbvvsor8cojvt" path="res://Assets/road_related/Road_finish_line.png" id="1_fpin6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svule"]
+size = Vector2(31, 264)
+
+[node name="FinishLine" type="Area2D" unique_id=791626093]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=570267761]
+position = Vector2(146, 25)
+texture = ExtResource("1_fpin6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956357669]
+position = Vector2(287, 82)
+shape = SubResource("RectangleShape2D_svule")

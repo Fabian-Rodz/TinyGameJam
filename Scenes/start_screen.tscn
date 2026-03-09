@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwat0ir10oylb"]
 
-[ext_resource type="Script" uid="uid://m3vti5r3eh2h" path="res://Scenes/start_screen.gd" id="1_ainjc"]
+[ext_resource type="Script" uid="uid://4uvb6756uxob" path="res://Scenes/start_screen.gd" id="1_ainjc"]
 [ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="2_5a7ho"]
 [ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="3_rjuq2"]
 [ext_resource type="Texture2D" uid="uid://gii4t68wd4xy" path="res://Assets/Cars/Red RC Car Sprite Sheet.png" id="4_akot6"]

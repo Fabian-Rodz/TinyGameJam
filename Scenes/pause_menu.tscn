@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://785o0eygd15t"]
+
+[ext_resource type="Script" uid="uid://b1msljl3j4h1r" path="res://pause_menu.gd" id="1_emv3i"]
+[ext_resource type="Texture2D" uid="uid://ocfy7i7lm0h8" path="res://Assets/road_related/fast-food-seamless-pattern-pixel-art-slice-of-pizza-french-fries-burger-hot-dog-90s-80s-8-bit-old-arcade-game-style-illustration-vector.png" id="2_k0w1u"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=398903297]
+process_mode = 3
+script = ExtResource("1_emv3i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1384052029]
+offset_right = 1960.0
+offset_bottom = 900.0
+
+[node name="FastFoodSeamlessPatternPixelArtSliceOfPizzaFrenchFriesBurgerHotDog90s80s8BitOldArcadeGameStyleIllustrationVector" type="Sprite2D" parent="." unique_id=1487273064]
+position = Vector2(977, 457.5)
+scale = Vector2(2, 0.93367344)
+texture = ExtResource("2_k0w1u")
+
+[node name="Label" type="Label" parent="." unique_id=1448791635]
+offset_left = 709.0
+offset_top = 211.0
+offset_right = 1243.0
+offset_bottom = 634.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9098039, 0.33333334, 0.6156863, 1)
+theme_override_font_sizes/font_size = 75
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
