@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="8_fiiv4"]
 [ext_resource type="Texture2D" uid="uid://brgkpkt1x2sq5" path="res://Assets/placeholder.webp" id="8_isxhl"]
 [ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="9_isxhl"]
-[ext_resource type="PackedScene" path="res://Scenes/finish_line.tscn" id="12_rsv6d"]
+[ext_resource type="PackedScene" uid="uid://s1qlkoebsytb" path="res://Scenes/finish_line.tscn" id="12_rsv6d"]
+[ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="13_busam"]
 [ext_resource type="Script" uid="uid://gs6kmoqyfsd0" path="res://Scenes/finish_line.gd" id="13_o1vn6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fiiv4"]
@@ -28,6 +29,7 @@ size = Vector2(276, 1359)
 script = ExtResource("1_w872l")
 
 [node name="PauseMenu" parent="." unique_id=398903297 instance=ExtResource("2_o1vn6")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=45565149]
 position = Vector2(1185, 345)
@@ -81,6 +83,7 @@ autoplay = true
 script = ExtResource("7_fycqo")
 
 [node name="Sprite2D" type="Sprite2D" parent="GameManager" unique_id=657250952]
+visible = false
 modulate = Color(0, 0, 0, 0.41960785)
 position = Vector2(926.5, -128.99997)
 scale = Vector2(2.4476562, 0.7984375)
@@ -111,10 +114,12 @@ position = Vector2(1200, -98)
 
 [node name="finishTimeLabel" type="Label" parent="GameManager/finishtime" unique_id=431841375]
 offset_left = -1181.0
-offset_top = -131.0
+offset_top = -77.0
 offset_right = -501.0
-offset_bottom = 365.0
-theme_override_colors/font_color = Color(0.8978127, 0.8978127, 0.89781266, 1)
+offset_bottom = 419.0
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
 theme_override_font_sizes/font_size = 50
 text = "Time Left: 
 "
@@ -127,7 +132,9 @@ offset_left = -201.0
 offset_top = -92.5
 offset_right = 201.0
 offset_bottom = 92.5
-theme_override_colors/font_color = Color(0.8978127, 0.8978127, 0.89781266, 1)
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
 theme_override_font_sizes/font_size = 135
 text = " 
 
@@ -144,22 +151,115 @@ offset_left = -201.0
 offset_top = -92.5
 offset_right = 201.0
 offset_bottom = 92.5
-theme_override_colors/font_color = Color(0.958888, 0.9588881, 0.958888, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
 theme_override_font_sizes/font_size = 135
-text = "P1 Points"
+text = "1
+"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="P2Points" type="Node2D" parent="GameManager" unique_id=56276131]
+[node name="P1LosePtsLabel" type="Label" parent="GameManager/P1Points" unique_id=75105111]
+offset_left = -201.0
+offset_top = 50.0
+offset_right = 453.0
+offset_bottom = 235.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.56245637, 0.48830938, 1)
+theme_override_colors/font_outline_color = Color(0.8188257, 0.09347416, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
+theme_override_font_sizes/font_size = 135
+text = "- 1"
+horizontal_alignment = 1
+
+[node name="P1GainPtsLabel" type="Label" parent="GameManager/P1Points" unique_id=505175557]
+offset_left = -201.0
+offset_top = -235.0
+offset_right = 453.0
+offset_bottom = -50.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.70172286, 1, 0.5256363, 1)
+theme_override_colors/font_outline_color = Color(0.23552173, 0.46797115, 1.92523e-07, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
+theme_override_font_sizes/font_size = 135
+text = "+ 1"
+horizontal_alignment = 1
+
+[node name="P1LosePtsTimer" type="Timer" parent="GameManager/P1Points" unique_id=1604739733]
+one_shot = true
+
+[node name="P1GainPtsTimer" type="Timer" parent="GameManager/P1Points" unique_id=507628920]
+one_shot = true
+
+[node name="P2Points" type="Node2D" parent="GameManager" unique_id=123652918]
 position = Vector2(1807, 108)
 scale = Vector2(0.5, 0.5)
 
-[node name="P2PointsLabel" type="Label" parent="GameManager/P2Points" unique_id=1031840405]
+[node name="P2PointsLabel" type="Label" parent="GameManager/P2Points" unique_id=996539837]
 offset_left = -201.0
 offset_top = -92.5
 offset_right = 201.0
 offset_bottom = 92.5
-theme_override_colors/font_color = Color(0.958888, 0.9588881, 0.958888, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
+theme_override_font_sizes/font_size = 135
+text = "1"
+horizontal_alignment = 1
+
+[node name="P2LosePtsLabel" type="Label" parent="GameManager/P2Points" unique_id=1137430476]
+offset_left = -520.0
+offset_top = 50.0
+offset_right = 134.0
+offset_bottom = 235.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.56245637, 0.48830938, 1)
+theme_override_colors/font_outline_color = Color(0.8188257, 0.09347416, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
+theme_override_font_sizes/font_size = 135
+text = "- 1"
+horizontal_alignment = 1
+
+[node name="P2GainPtsLabel" type="Label" parent="GameManager/P2Points" unique_id=1884783321]
+offset_left = -520.0
+offset_top = -235.0
+offset_right = 134.0
+offset_bottom = -50.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.70172286, 1, 0.5256363, 1)
+theme_override_colors/font_outline_color = Color(0.23552173, 0.46797115, 1.92523e-07, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
+theme_override_font_sizes/font_size = 135
+text = "+ 1"
+horizontal_alignment = 1
+
+[node name="P2LosePtsTimer" type="Timer" parent="GameManager/P2Points" unique_id=815463846]
+one_shot = true
+
+[node name="P2GainPtsTimer" type="Timer" parent="GameManager/P2Points" unique_id=428925057]
+one_shot = true
+
+[node name="delete" type="Node2D" parent="GameManager" unique_id=56276131]
+visible = false
+position = Vector2(1807, 108)
+scale = Vector2(0.5, 0.5)
+
+[node name="P2PointsLabel" type="Label" parent="GameManager/delete" unique_id=1031840405]
+offset_left = -201.0
+offset_top = -92.5
+offset_right = 201.0
+offset_bottom = 92.5
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("13_busam")
 theme_override_font_sizes/font_size = 135
 text = "P2 Points"
 horizontal_alignment = 1
@@ -204,6 +304,10 @@ spawn_position = Vector2(2500, 630)
 
 [connection signal="timeout" from="ObstacleManager/Timer" to="ObstacleManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="ObstacleManager/Timer2" to="ObstacleManager" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="GameManager/P1Points/P1LosePtsTimer" to="GameManager" method="_on_p1_lose_pts_timer_timeout"]
+[connection signal="timeout" from="GameManager/P1Points/P1GainPtsTimer" to="GameManager" method="_on_p1_gain_pts_timer_timeout"]
+[connection signal="timeout" from="GameManager/P2Points/P2LosePtsTimer" to="GameManager" method="_on_p2_lose_pts_timer_timeout"]
+[connection signal="timeout" from="GameManager/P2Points/P2GainPtsTimer" to="GameManager" method="_on_p2_gain_pts_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="ObstacleManager" method="_on_start_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="GameManager" method="_on_start_timer_timeout"]
 [connection signal="timeout" from="finishTimer" to="." method="_on_finish_timer_timeout"]

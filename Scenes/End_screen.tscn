@@ -1,35 +1,17 @@
 [gd_scene format=3 uid="uid://vcc8o5wt85gg"]
 
-[ext_resource type="Script" uid="uid://d0n3ngwahoel3" path="res://Scenes/end_screen.gd" id="1_0qed1"]
+[ext_resource type="Script" uid="uid://cvkqk3d58nimh" path="res://Scenes/end_screen.gd" id="1_0qed1"]
 [ext_resource type="Texture2D" uid="uid://c8wvr04yct5tr" path="res://Assets/road_related/backgorundnightcity.png" id="2_8nu8r"]
 [ext_resource type="Texture2D" uid="uid://dvsjwflv44w0y" path="res://Assets/road_related/Road.png" id="3_me3mo"]
-[ext_resource type="Texture2D" uid="uid://dee507q8ai4wg" path="res://Assets/Sponsors/p1/red_sprites.PNG" id="4_57cfh"]
-[ext_resource type="Texture2D" uid="uid://piwoq5p2s1cf" path="res://Assets/Sponsors/p2/blue_sprites.PNG" id="5_6qmkm"]
+[ext_resource type="PackedScene" uid="uid://bnimhdrh5i4ga" path="res://Scenes/Sponsor.tscn" id="4_sprns"]
+[ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="6_1wtuc"]
 [ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="6_swvht"]
-[ext_resource type="Texture2D" uid="uid://gii4t68wd4xy" path="res://Assets/Cars/Red RC Car Sprite Sheet.png" id="7_unwnu"]
-[ext_resource type="Texture2D" uid="uid://d7jkf4piqx8p" path="res://Assets/Cars/Blue RC Car Sprite Sheet.png" id="8_rd2p5"]
 [ext_resource type="Texture2D" uid="uid://c82uk6efssup3" path="res://Assets/burger_bun_button.png" id="9_7jbx1"]
 [ext_resource type="Texture2D" uid="uid://df7flt1dk821g" path="res://Assets/burger_button.png" id="10_ifnms"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_i826k"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7t8r4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3xm45"]
-atlas = ExtResource("4_57cfh")
-region = Rect2(379.37207, 0, 253.77368, 215.35086)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_in6lv"]
-atlas = ExtResource("5_6qmkm")
-region = Rect2(404.42273, 44.449768, 215.156, 204.52612)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7x83a"]
-atlas = ExtResource("7_unwnu")
-region = Rect2(4, 21.25, 24, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vbu4r"]
-atlas = ExtResource("8_rd2p5")
-region = Rect2(6.5, 21.25, 21, 17)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6ytee"]
 
@@ -108,43 +90,45 @@ grow_vertical = 2
 texture = ExtResource("3_me3mo")
 expand_mode = 1
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2059666344]
-position = Vector2(105, 87.00002)
-scale = Vector2(1.0402768, 1.1555814)
-texture = SubResource("AtlasTexture_3xm45")
+[node name="sponsor1" parent="." unique_id=701603321 instance=ExtResource("4_sprns")]
+position = Vector2(105, 87)
 
-[node name="Label" type="Label" parent="Sprite2D2" unique_id=2092046796]
+[node name="Label" type="Label" parent="sponsor1" unique_id=2092046796]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.64822
-offset_top = -99.04107
-offset_right = -107.64822
-offset_bottom = -76.04108
+offset_left = -35.003464
+offset_top = 120.133026
+offset_right = 29.996536
+offset_bottom = 155.13303
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_swvht")
 theme_override_font_sizes/font_size = 25
 text = "score"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=745112964]
+[node name="sponsor2" parent="." unique_id=648043677 instance=ExtResource("4_sprns")]
 position = Vector2(1809, 92)
-scale = Vector2(1.2668598, 1.2801892)
-texture = SubResource("AtlasTexture_in6lv")
 
-[node name="Label" type="Label" parent="Sprite2D" unique_id=976626465]
+[node name="Label" type="Label" parent="sponsor2" unique_id=976626465]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -124.8658
-offset_top = -89.17322
-offset_right = -84.8658
-offset_bottom = -66.17322
+offset_left = -31.0
+offset_top = 122.0
+offset_right = 48.0
+offset_bottom = 157.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.6, 0.39215687, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_swvht")
 theme_override_font_sizes/font_size = 25
 text = "score"
 
@@ -188,16 +172,13 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer" unique_id=1510770603]
-position = Vector2(112.50008, 86.00006)
-scale = Vector2(12.548332, 13.364041)
-texture = SubResource("AtlasTexture_7x83a")
+[node name="player1" parent="VBoxContainer/HBoxContainer" unique_id=511474042 instance=ExtResource("6_1wtuc")]
+position = Vector2(115.5, -65.91501)
+scale = Vector2(13, 13)
 
-[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/HBoxContainer" unique_id=293861776]
-position = Vector2(375.81, 112.63)
-scale = Vector2(12.529457, 13.560263)
-texture = SubResource("AtlasTexture_vbu4r")
-flip_h = true
+[node name="player2" parent="VBoxContainer/HBoxContainer" unique_id=1980784767 instance=ExtResource("6_1wtuc")]
+position = Vector2(390.5, -65.915)
+scale = Vector2(-13, 13)
 
 [node name="replay" type="TextureButton" parent="VBoxContainer" unique_id=1031471490]
 material = SubResource("CanvasItemMaterial_6ytee")

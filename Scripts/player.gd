@@ -3,7 +3,9 @@ extends CharacterBody2D
 
 const BASE_SPEED = 800.0
 const HIT_SPEED = 400
-var crash_speed = 1000
+const BASE_CRASH_KNOCKBACK = 1500
+const HIT_CRASH_KNOCKBACK = 2000
+var crash_speed = BASE_CRASH_KNOCKBACK
 
 
 var is_p1 = true
@@ -24,7 +26,7 @@ enum Car_State{
 	Startup,
 	Running,
 	Hit,
-	Jumping
+	End_Screen
 }
 
 var current_state: Car_State = Car_State.Running
@@ -41,10 +43,9 @@ func change_state(newState):
 				is_hit = true
 				hit_counter = 0
 				sprite.stop()
-				crash_speed = 100
-			Car_State.Jumping:
+				crash_speed = HIT_CRASH_KNOCKBACK
+			Car_State.End_Screen:
 				car_collision.set_deferred("disabled",true)
-				sprite.play("jump")
 
 # Car Colors
 var color
@@ -63,6 +64,7 @@ func change_color(newColor:String):
 	for list_color in colors:
 		list_color.hide()
 	sprite.show()
+
 
 
 func _ready() -> void:
@@ -102,25 +104,18 @@ func _physics_process(delta: float) -> void:
 
 		Car_State.Hit:
 			if hit_counter < 4:
-				velocity = velocity.move_toward(direction * HIT_SPEED,110)
+				velocity = velocity.move_toward(direction * HIT_SPEED,100)
 				if not sprite.is_playing():
 					sprite.play("hit")
 					hit_counter += 1
 			else:
-				crash_speed = 1000
+				crash_speed = BASE_CRASH_KNOCKBACK
 				is_hit = false
 				change_state(Car_State.Running)
+		
+		Car_State.End_Screen:
+			pass
 
-		Car_State.Jumping:
-			velocity = Vector2(100,0)
-			if not sprite.is_playing():
-				car_collision.set_deferred("disabled",false)
-				change_state(Car_State.Running)
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		change_state(Car_State.Running)
-	if Input.is_action_just_pressed("ui_accept"):
-		change_state(Car_State.Jumping)
 
 	move_and_slide()
 
@@ -132,6 +127,11 @@ func _on_car_area_area_entered(area: Area2D) -> void:
 		global_position.x = move_toward(global_position.x,global_position.x + direction.x,10)
 		global_position.y = move_toward(global_position.y,global_position.y + direction.y,10)
 	if "Obstacle" in area.name:
+		car_collision.set_deferred("disabled",true)
+		velocity.x = -3000
+		if points > 0:
+			points -=1 
+		car_collision.set_deferred("disabled",false)
 		change_state(Car_State.Hit)
 		print("Obstacle Collision")
 	if "Food" in area.name:
