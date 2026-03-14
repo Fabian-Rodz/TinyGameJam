@@ -10,15 +10,27 @@ extends Node2D
 
 
 @onready var countdown: Label = $Countdown/CountdownLabel
+
 @onready var p1_points_label: Label = $P1Points/P1PointsLabel
+@onready var p1_gain_pts_label: Label = $P1Points/P1GainPtsLabel
+@onready var p1_lose_pts_label: Label = $P1Points/P1LosePtsLabel
+@onready var p1_gain_pts_timer: Timer = $P1Points/P1GainPtsTimer
+@onready var p1_lose_pts_timer: Timer = $P1Points/P1LosePtsTimer
+
 @onready var p2_points_label: Label = $P2Points/P2PointsLabel
+@onready var p2_gain_pts_label: Label = $P2Points/P2GainPtsLabel
+@onready var p2_lose_pts_label: Label = $P2Points/P2LosePtsLabel
+@onready var p2_gain_pts_timer: Timer = $P2Points/P2GainPtsTimer
+@onready var p2_lose_pts_timer: Timer = $P2Points/P2LosePtsTimer
 
 
 
 # 0 = startup, 1 = running, 2 = hit, 3 = jump
 var p1_state = 0
 var p2_state = 0
-# Called when the node enters the scene tree for the first time.
+
+var p1_current_points
+var p2_current_points
 
 func change_state_all(state:int):
 	p1_state = state
@@ -30,10 +42,18 @@ func start_game():
 	change_state_all(0)
 	player_1.position = p1_spawn.position
 	player_2.position = p2_spawn.position
+	
 	p1_points_label.hide()
+	p1_gain_pts_label.hide()
+	p1_lose_pts_label.hide()
+	p1_current_points = 0
+	
 	p2_points_label.hide()
+	p2_gain_pts_label.hide()
+	p2_lose_pts_label.hide()
+	p2_current_points = 0
+	
 	countdown.show()
-	print("P1 color: " + Global.p1_color)
 	player_1.change_color(Global.p1_color)
 	sponsor_1.change_color(Global.p1_color)
 	player_2.change_color(Global.p2_color)
@@ -62,6 +82,24 @@ func _process(delta: float) -> void:
 	p2_points_label.text = str(player_2.points)
 	Global.score_player2 = player_2.points
 	Global.score_player1 = player_1.points
+	
+	if p1_current_points > player_1.points:
+		p1_lose_pts_label.show()
+		p1_current_points = player_1.points
+		p1_lose_pts_timer.start()
+	if p1_current_points < player_1.points:
+		p1_gain_pts_label.show()
+		p1_current_points = player_1.points
+		p1_gain_pts_timer.start()
+	
+	if p2_current_points > player_2.points:
+		p2_lose_pts_label.show()
+		p2_current_points = player_2.points
+		p2_lose_pts_timer.start()
+	if p2_current_points < player_2.points:
+		p2_gain_pts_label.show()
+		p2_current_points = player_2.points
+		p2_gain_pts_timer.start()
 
 
 	if start_timer.time_left >= 4:
@@ -94,8 +132,25 @@ func _process(delta: float) -> void:
 		sponsor_1.change_sprite("hit")
 	if player_2.is_hit:
 		sponsor_2.change_sprite("hit")
+		
 
 
 
 func _on_start_timer_timeout() -> void:
 	countdown.hide()
+
+
+func _on_p1_gain_pts_timer_timeout() -> void:
+	p1_gain_pts_label.hide()
+
+
+func _on_p1_lose_pts_timer_timeout() -> void:
+	p1_lose_pts_label.hide()
+
+
+func _on_p2_gain_pts_timer_timeout() -> void:
+	p2_gain_pts_label.hide()
+
+
+func _on_p2_lose_pts_timer_timeout() -> void:
+	p2_lose_pts_label.hide()
