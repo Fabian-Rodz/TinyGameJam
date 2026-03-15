@@ -17,6 +17,9 @@ func _ready() -> void:
 	road_2.position.x = road_width
 	finish_timer.start()
 	
+	Global.stop_shared_music()
+	$AudioStreamPlayer2D.play()
+	
 
 func _process(delta: float) -> void:
 	_update_time_label()

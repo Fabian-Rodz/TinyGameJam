@@ -21,6 +21,16 @@ func _ready() -> void:
 	player_2.change_color(Global.p2_color)
 	sponsor_1.play(Global.p1_color)
 	sponsor_2.play(Global.p2_color)
+	Global.play_shared_music(Global.MENU_MUSIC)
+
+	Global.p1_color = "red"
+	Global.p2_color = "blue"
+
+	player_1.change_color(Global.p1_color)
+	player_2.change_color(Global.p2_color)
+
+	sponsor_1.play(Global.p1_color)
+	sponsor_2.play(Global.p2_color)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

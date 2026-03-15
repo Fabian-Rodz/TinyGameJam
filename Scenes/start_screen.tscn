@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d7jkf4piqx8p" path="res://Assets/Cars/Blue RC Car Sprite Sheet.png" id="5_rjuq2"]
 [ext_resource type="Texture2D" uid="uid://dee507q8ai4wg" path="res://Assets/Sponsors/p1/red_sprites.PNG" id="9_rjuq2"]
 [ext_resource type="Texture2D" uid="uid://piwoq5p2s1cf" path="res://Assets/Sponsors/p2/blue_sprites.PNG" id="10_c1457"]
+[ext_resource type="AudioStream" uid="uid://86vp8blq1c56" path="res://Assets/road_related/alexguz-food-coma-327598.mp3" id="11_c1457"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_i826k"]
 
@@ -247,6 +248,10 @@ theme_override_fonts/font = ExtResource("5_mtlf8")
 theme_override_font_sizes/font_size = 200
 text = "Calorie Rallie"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=107619081]
+stream = ExtResource("11_c1457")
+volume_db = -31.299
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/how to play" to="." method="_on_how_to_play_pressed"]

@@ -45,6 +45,9 @@ func _ready() -> void:
 		
 		player_2.sprite.play("loser")
 		sponsor2.change_sprite("loser")
+		
+		Global.stop_shared_music()
+	$AudioStreamPlayer2D.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

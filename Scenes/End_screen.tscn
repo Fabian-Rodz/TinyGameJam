@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b82ive23entof" path="res://Scenes/player.tscn" id="6_1wtuc"]
 [ext_resource type="FontFile" uid="uid://bgwhgykpo2p4q" path="res://Assets/game_bubble/Pixelout Personal Use Only.ttf" id="6_swvht"]
 [ext_resource type="Texture2D" uid="uid://c82uk6efssup3" path="res://Assets/burger_bun_button.png" id="9_7jbx1"]
+[ext_resource type="AudioStream" uid="uid://b812modriwj4n" path="res://Assets/road_related/sonican-winning-awards-celebration-orchestral-v2-449089.mp3" id="9_sprns"]
 [ext_resource type="Texture2D" uid="uid://df7flt1dk821g" path="res://Assets/burger_button.png" id="10_ifnms"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_i826k"]
@@ -265,6 +266,11 @@ theme_override_fonts/font = ExtResource("6_swvht")
 theme_override_font_sizes/font_size = 70
 text = "Exit"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=929002964]
+stream = ExtResource("9_sprns")
+volume_db = -16.523
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/replay" to="." method="_on_replay_pressed"]
 [connection signal="pressed" from="VBoxContainer/start screen" to="." method="_on_start_screen_pressed"]
